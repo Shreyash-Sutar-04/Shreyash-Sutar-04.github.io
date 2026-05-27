@@ -1,714 +1,1436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shreyash Sutar — DevOps & Cloud Engineer</title>
-  <meta name="description" content="Shreyash Sutar — DevOps & Cloud Engineer specialising in CI/CD, AWS infrastructure, and SRE practices." />
-  <meta property="og:title" content="Shreyash Sutar — DevOps & Cloud Engineer" />
-  <meta property="og:description" content="Final-year Computer Engineering student with hands-on DevOps, AWS, and SRE experience." />
+  <title>Shreyash Sutar — DevOps &amp; Cloud Engineer</title>
+  
+  <!-- Font Integrations -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      /* Base */
-      --bg:          #f5f7ff;
-      --bg2:         #eef1fb;
-      --surface:     #ffffff;
-      --surface2:    #f8f9ff;
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-      /* Ink */
-      --ink:         #0f1623;
-      --ink2:        #374264;
-      --ink3:        #7b87aa;
-
-      /* Primary — indigo-violet */
-      --p400:        #6366f1;
-      --p500:        #4f46e5;
-      --p600:        #4338ca;
-      --p-bg:        rgba(99,102,241,0.08);
-      --p-line:      rgba(99,102,241,0.2);
-
-      /* Accent — teal */
-      --a400:        #14b8a6;
-      --a500:        #0d9488;
-      --a-bg:        rgba(20,184,166,0.08);
-      --a-line:      rgba(20,184,166,0.22);
-
-      /* Warm — amber */
-      --w400:        #f59e0b;
-      --w500:        #d97706;
-      --w-bg:        rgba(245,158,11,0.08);
-      --w-line:      rgba(245,158,11,0.22);
-
-      /* Sky */
-      --s400:        #38bdf8;
-      --s-bg:        rgba(56,189,248,0.08);
-      --s-line:      rgba(56,189,248,0.22);
-
-      /* Rule */
-      --rule:        rgba(99,102,241,0.1);
-      --rule2:       rgba(15,22,35,0.07);
-
-      --r: 8px;
-      --max: 860px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Instrument Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a { color: var(--p400); text-decoration: none; transition: color .2s; }
-    a:hover { color: var(--p600); }
-    ul { list-style: none; }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(245,247,255,0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--rule2);
-    }
-    .nav-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 58px;
-    }
-    .nav-logo {
-      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800;
-      color: var(--ink); letter-spacing: -0.02em;
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .nav-logo .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--p400), var(--a400));
-      flex-shrink: 0;
-    }
-    .nav-links { display: flex; gap: 2.2rem; }
-    .nav-links a {
-      font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--ink3); transition: color .2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--p400); }
-    .nav-toggle {
-      display: none; background: none; border: none;
-      cursor: pointer; flex-direction: column; gap: 5px; padding: 4px;
-    }
-    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink3); border-radius: 2px; transition: all .3s; }
-
-    /* ─── PAGE ─── */
-    .page { max-width: var(--max); margin: 0 auto; padding: 0 2rem; position: relative; }
-
-    /* ─── HERO ─── */
-    .hero {
-      padding: 148px 0 96px;
-      position: relative;
-    }
-
-    /* large decorative gradient blob behind hero */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 60px; right: -120px;
-      width: 520px; height: 520px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99,102,241,0.13) 0%, rgba(20,184,166,0.07) 55%, transparent 75%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      background: linear-gradient(90deg, var(--p-bg), var(--a-bg));
-      border: 1px solid var(--p-line);
-      border-radius: 100px; padding: 0.28rem 1rem 0.28rem 0.6rem;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--p500);
-      margin-bottom: 1.8rem;
-    }
-    .hero-eyebrow .blink {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--a400); flex-shrink: 0;
-      animation: blink 2.2s ease-in-out infinite;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
-
-    .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3rem, 7vw, 5rem);
-      font-weight: 800; line-height: 1.04; letter-spacing: -0.04em;
-      color: var(--ink); margin-bottom: 0.2rem;
-    }
-    .hero h1 .grad {
-      background: linear-gradient(125deg, var(--p400) 0%, var(--a400) 60%, var(--s400) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero h1 .sub-head { color: var(--ink2); }
-
-    .hero-summary {
-      font-size: 1.02rem; color: var(--ink2);
-      max-width: 520px; line-height: 1.82;
-      margin: 1.7rem 0 2.2rem;
-    }
-    .hero-meta {
-      display: flex; flex-wrap: wrap; gap: 1.4rem;
-      font-size: 0.82rem; color: var(--ink3); margin-bottom: 2.4rem;
-    }
-    .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.65rem 1.4rem; border-radius: var(--r);
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.03em;
-      cursor: pointer; transition: all .22s; text-decoration: none;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--p400), var(--p600));
-      color: #fff;
-      box-shadow: 0 4px 18px rgba(99,102,241,0.28);
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, var(--p600), var(--p400));
-      box-shadow: 0 6px 24px rgba(99,102,241,0.38);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      background: var(--surface); border: 1.5px solid var(--rule2);
-      color: var(--ink2);
-    }
-    .btn-outline:hover { border-color: var(--p-line); color: var(--p500); background: var(--p-bg); }
-
-    /* ─── SECTION SHELL ─── */
-    .section { padding: 80px 0 72px; border-top: 1px solid var(--rule2); }
-
-    .sec-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
-    .sec-num {
-      font-family: 'Syne', sans-serif; font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.16em; color: var(--p400); opacity: .55;
-    }
-    .sec-title {
-      font-family: 'Syne', sans-serif; font-size: 1.85rem; font-weight: 800;
-      letter-spacing: -0.025em; color: var(--ink);
-    }
-    .sec-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--rule2), transparent); }
-
-    /* ─── SKILLS ─── */
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1px; background: var(--rule2);
-      border: 1px solid var(--rule2); border-radius: var(--r); overflow: hidden;
-    }
-    .skill-cell {
-      background: var(--surface); padding: 1.5rem 1.6rem; transition: background .22s;
-    }
-    .skill-cell:hover { background: var(--surface2); }
-
-    .skill-icon {
-      width: 36px; height: 36px; border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; margin-bottom: 0.75rem;
-    }
-    .si-indigo { background: linear-gradient(135deg,rgba(99,102,241,.12),rgba(99,102,241,.06)); border: 1px solid var(--p-line); }
-    .si-teal   { background: linear-gradient(135deg,rgba(20,184,166,.12),rgba(20,184,166,.06)); border: 1px solid var(--a-line); }
-    .si-amber  { background: linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.06)); border: 1px solid var(--w-line); }
-    .si-sky    { background: linear-gradient(135deg,rgba(56,189,248,.12),rgba(56,189,248,.06));  border: 1px solid var(--s-line); }
-
-    .skill-label {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--p400); margin-bottom: 0.4rem;
-    }
-    .skill-content { font-size: 0.86rem; color: var(--ink2); line-height: 1.65; }
-
-    /* ─── TAGS ─── */
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
-    .tag {
-      font-size: 0.71rem; font-weight: 600; letter-spacing: 0.05em;
-      padding: 0.24rem 0.62rem; border-radius: 4px;
-      background: var(--p-bg); border: 1px solid var(--p-line); color: var(--p500);
-    }
-    .tag.teal  { background: var(--a-bg); border-color: var(--a-line); color: var(--a500); }
-    .tag.amber { background: var(--w-bg); border-color: var(--w-line); color: var(--w500); }
-    .tag.sky   { background: var(--s-bg); border-color: var(--s-line); color: #0369a1; }
-
-    /* ─── PROJECTS ─── */
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--rule2);
-      border-radius: var(--r);
-      padding: 2rem 2rem 1.8rem;
-      position: relative; overflow: hidden;
-      transition: box-shadow .25s, transform .25s;
-    }
-    .project-card + .project-card { margin-top: 1.1rem; }
-    .project-card:hover {
-      box-shadow: 0 8px 36px rgba(99,102,241,0.11);
-      transform: translateY(-2px);
-    }
-
-    /* gradient accent stripe top */
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--p400), var(--a400), var(--s400));
-      opacity: 0; transition: opacity .25s;
-    }
-    .project-card:hover::before { opacity: 1; }
-
-    .project-top {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 1rem; margin-bottom: 0.85rem;
-    }
-    .project-num {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--p400); margin-bottom: 0.35rem;
-    }
-    .project-title {
-      font-family: 'Syne', sans-serif; font-size: 1.12rem; font-weight: 700;
-      color: var(--ink); letter-spacing: -0.01em;
-    }
-    .project-year {
-      font-size: 0.72rem; font-weight: 600; color: var(--ink3);
-      background: var(--bg2); border: 1px solid var(--rule2);
-      border-radius: 4px; padding: 0.2rem 0.55rem; white-space: nowrap; flex-shrink: 0;
-    }
-    .project-desc { font-size: 0.875rem; color: var(--ink2); line-height: 1.8; }
-    .project-desc ul { padding-left: 1.1rem; list-style: disc; }
-    .project-desc li { margin: 0.3rem 0; }
-
-    /* ─── CERTIFICATIONS ─── */
-    .cert-list { display: flex; flex-direction: column; }
-    .cert-item {
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule2);
-    }
-    .cert-item:last-child { border-bottom: none; }
-    .cert-name { font-size: 0.92rem; font-weight: 600; color: var(--ink); }
-    .cert-org { font-size: 0.78rem; color: var(--ink3); margin-top: 0.18rem; }
-    .badge {
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.24rem 0.64rem;
-      border-radius: 4px; flex-shrink: 0;
-    }
-    .badge-done { background: rgba(20,184,166,.1); border: 1px solid rgba(20,184,166,.25); color: var(--a500); }
-    .badge-wip  { background: var(--w-bg); border: 1px solid var(--w-line); color: var(--w500); }
-
-    /* ─── EDUCATION ─── */
-    .edu-list { display: flex; flex-direction: column; }
-    .edu-item {
-      display: grid; grid-template-columns: 1fr auto;
-      gap: .4rem 1.5rem; align-items: start;
-      padding: 1.3rem 0; border-bottom: 1px solid var(--rule2);
-    }
-    .edu-item:last-child { border-bottom: none; }
-    .edu-degree { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
-    .edu-inst { font-size: 0.84rem; color: var(--ink2); margin-top: .2rem; }
-    .edu-detail { font-size: 0.78rem; color: var(--ink3); margin-top: .25rem; }
-    .edu-year { font-size: 0.75rem; font-weight: 600; color: var(--p400); white-space: nowrap; text-align: right; }
-
-    /* ─── SEEKING BANNER ─── */
-    .seeking {
-      background: linear-gradient(135deg, rgba(99,102,241,.07) 0%, rgba(20,184,166,.06) 100%);
-      border: 1px solid var(--p-line);
-      border-radius: var(--r); padding: 1.5rem 1.8rem;
-      display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;
-    }
-    .seeking-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .seeking-text { font-size: 0.9rem; color: var(--ink2); line-height: 1.75; }
-    .seeking-text strong { color: var(--p500); font-weight: 700; }
-
-    /* ─── CONTACT GRID ─── */
-    .contact-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--rule2);
-      border: 1px solid var(--rule2); border-radius: var(--r); overflow: hidden;
-    }
-    .contact-cell {
-      background: var(--surface); padding: 1.4rem 1.5rem; transition: background .2s;
-    }
-    .contact-cell:hover { background: var(--surface2); }
-    .contact-cell-label {
-      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--ink3); margin-bottom: 0.4rem;
-    }
-    .contact-cell a { font-size: 0.86rem; color: var(--ink); font-weight: 500; word-break: break-all; }
-    .contact-cell a:hover { color: var(--p500); }
-    .contact-cell p { font-size: 0.86rem; color: var(--ink); font-weight: 500; }
-
-    /* ─── FOOTER ─── */
-    footer { border-top: 1px solid var(--rule2); padding: 2rem 0; margin-top: 2rem; }
-    .footer-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.78rem; color: var(--ink3);
-    }
-    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; color: var(--ink2); }
-
-    /* ─── SCROLL REVEAL ─── */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 640px) {
-      .nav-toggle { display: flex; }
-      .nav-links {
-        display: none; position: fixed; top: 58px; left: 0; right: 0;
-        background: rgba(245,247,255,.96); border-bottom: 1px solid var(--rule2);
-        flex-direction: column; padding: 1.2rem 2rem; gap: 1.2rem;
-        backdrop-filter: blur(16px);
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Custom CSS Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Instrument Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              indigo: '#4f46e5',
+              sky: '#0284c7',
+              pink: '#db2777',
+            }
+          }
+        }
       }
-      .nav-links.open { display: flex; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .edu-item { grid-template-columns: 1fr; }
-      .edu-year { text-align: left; }
-      .hero h1 { font-size: 2.6rem; }
-      .hero::before { display: none; }
-      .footer-inner { flex-direction: column; gap: .4rem; text-align: center; }
+    }
+  </script>
+
+  <!-- Global Custom CSS Rules -->
+  <style>
+    body {
+      font-family: "Instrument Sans", sans-serif;
+    }
+    .heading-display {
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .code-mono {
+      font-family: "JetBrains Mono", monospace;
+    }
+    .gradient-blur {
+      filter: blur(130px);
+    }
+    /* Custom scroll bar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    /* Page elements transitions */
+    .fade-content {
+      transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
     }
   </style>
-</head>
-<body>
-  <a href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-logo"><span class="dot"></span>Shreyash Sutar</div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certs</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+  <!-- Early Theme Synchronization to Prevent Flickers -->
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="bg-[#fcfcff] text-slate-950 dark:bg-[#090d16] dark:text-[#f1f5f9] min-h-screen transition-colors duration-500 selection:bg-indigo-500 selection:text-white antialiased">
+  
+  <!-- BACKGROUND DECORATIONS (GLOW EFFECTS) -->
+  <div class="absolute top-0 left-0 w-full h-[800px] overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-[-200px] left-[5%] w-[600px] h-[600px] rounded-full gradient-blur opacity-20 dark:opacity-25 bg-indigo-500 dark:bg-indigo-900/30 transition-colors duration-500"></div>
+    <div class="absolute top-[150px] right-[-100px] w-[500px] h-[500px] rounded-full gradient-blur opacity-15 dark:opacity-20 bg-sky-400 dark:bg-sky-900/20 transition-colors duration-500"></div>
+  </div>
+
+  <!-- FIXED STICKY HEADER SYSTEM -->
+  <header class="sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-500 bg-white/70 border-slate-200/60 dark:bg-[#090d16]/80 dark:border-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#about" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-sm tracking-tight transition-all duration-300 transform group-hover:scale-105 shadow-md bg-gradient-to-tr from-indigo-650 to-indigo-500 text-white shadow-indigo-900/10 dark:shadow-indigo-950/40">
+          SS
+        </div>
+        <div>
+          <span class="font-extrabold text-sm tracking-tight block heading-display text-slate-900 dark:text-white">Shreyash Sutar</span>
+          <span class="text-[10px] code-mono tracking-wider uppercase font-bold block text-indigo-600 dark:text-indigo-400">
+            DevOps &amp; Cloud Engineer
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold tracking-wide text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">About</a>
+        <a href="#skills" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Skills</a>
+        <a href="#pipeline" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Pipline</a>
+        <a href="#projects" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Experience</a>
+        <a href="#accreditations" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Credentials</a>
+        <a href="#contact" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Interactive Actions -->
+      <div class="flex items-center gap-2.5">
+        
+        <!-- Toggle Theme Button -->
+        <button onclick="toggleTheme()" aria-label="Switch interface contrast theme" class="p-2.5 rounded-xl border transition-all cursor-pointer bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-amber-400 dark:hover:bg-slate-800">
+          <!-- Light Theme Sun Icon -->
+          <svg id="sun-icon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Dark Theme Moon Icon -->
+          <svg id="moon-icon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Direct Resume Download File Button -->
+        <button onclick="handleDownloadCV()" class="hidden sm:flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl cursor-pointer shadow-md bg-slate-900 hover:bg-slate-800 text-white dark:bg-indigo-650 dark:hover:bg-indigo-600 transition-all shadow-indigo-950/10">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download CV
+        </button>
+
+        <!-- Mobile Drawer Menu Toggle -->
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border bg-slate-100 border-slate-200 text-slate-800 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
       </div>
     </div>
-  </nav>
 
-  <main id="main">
-    <div class="page">
+    <!-- Responsive Drawer Menu (Mobile) -->
+    <div id="mobile-menu" class="hidden border-t bg-white dark:bg-[#090d16] border-slate-200 dark:border-slate-900 md:hidden">
+      <div class="px-6 py-6 space-y-4 text-xs font-bold tracking-wide flex flex-col text-slate-600 dark:text-slate-300">
+        <a href="#about" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">About</a>
+        <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Skills</a>
+        <a href="#pipeline" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">CI/CD Pipeline</a>
+        <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Projects</a>
+        <a href="#experience" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Background Track</a>
+        <a href="#accreditations" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Achievements</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Contact</a>
+        <button onclick="handleDownloadCV(); toggleMobileMenu()" class="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-550 text-white transition-all text-center">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download Resume File
+        </button>
+      </div>
+    </div>
+  </header>
 
-      <!-- HERO -->
-      <section class="hero" id="about">
-        <div class="hero-eyebrow"><span class="blink"></span>Open to opportunities</div>
-        <h1>
-          DevOps &amp; <span class="grad">Cloud</span><br>
-          <span class="sub-head">Engineer</span>
-        </h1>
-        <p class="hero-summary">
-          Final-year Computer Engineering student with proven experience building CI/CD pipelines,
-          provisioning AWS infrastructure, and automating deployments at scale.
-          Passionate about reliability engineering and infrastructure that never sleeps.
-        </p>
-        <div class="hero-meta">
-          <span>📍 Pune, India</span>
-          <span>📱 +91-8485898732</span>
-          <span>📧 shreyashsutar40@gmail.com</span>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:shreyashsutar40@gmail.com">Get in touch</a>
-          <a class="btn btn-outline" href="/Shreyash_Sutar_Resume.pdf" target="_blank">Download Résumé ↗</a>
-          <a class="btn btn-outline" href="https://github.com/shreyash-sutar-04" target="_blank">GitHub ↗</a>
-          <a class="btn btn-outline" href="https://linkedin.com/in/shreyash-sutar" target="_blank">LinkedIn ↗</a>
-        </div>
-      </section>
+  <!-- MAIN BODY CONTENT -->
+  <main class="max-w-6xl mx-auto px-6 py-12 lg:py-20 relative z-10 space-y-24 lg:space-y-36">
 
-      <!-- SKILLS -->
-      <section class="section reveal" id="skills">
-        <div class="sec-head">
-          <span class="sec-num">01</span>
-          <h2 class="sec-title">Technical Skills</h2>
-          <span class="sec-line"></span>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-cell">
-            <div class="skill-icon si-indigo">☁️</div>
-            <div class="skill-label">Cloud Platforms</div>
-            <div class="skill-content">AWS — EC2, S3, VPC, IAM, Lambda, SNS, CloudWatch, RDS, DynamoDB, CloudFront, Auto Scaling, Route 53</div>
+    <!-- HERO PROFILE GREETING -->
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Copy Details Left -->
+      <div class="lg:col-span-7 space-y-8">
+        <div class="space-y-4">
+          
+          <!-- State Alert Badge -->
+          <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 px-4 py-2 rounded-full text-xs code-mono font-bold tracking-wider text-indigo-600 dark:text-indigo-400">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            Available for Internships &amp; Associate Roles
           </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-sky">🐳</div>
-            <div class="skill-label">Containerisation</div>
-            <div class="skill-content">Docker (build, push, run, Compose), Kubernetes — Pod deployment, Services, ConfigMaps</div>
-          </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-amber">🔧</div>
-            <div class="skill-label">Infrastructure as Code</div>
-            <div class="skill-content">Terraform (modules, state, S3 backend), Ansible (playbooks, dynamic inventory)</div>
-          </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-teal">🔄</div>
-            <div class="skill-label">CI/CD & Automation</div>
-            <div class="skill-content">Jenkins (Scripted & Declarative), GitLab CI, Git Webhooks, Shell Scripting</div>
-          </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-indigo">📊</div>
-            <div class="skill-label">Monitoring & Observability</div>
-            <div class="skill-content">CloudWatch alarms & metrics, log aggregation, performance monitoring, health checks</div>
-          </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-amber">💻</div>
-            <div class="skill-label">Languages</div>
-            <div class="skill-content">Python (scripting, boto3), Bash / Shell, Groovy (Jenkins pipelines)</div>
-          </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-teal">🛡️</div>
-            <div class="skill-label">SRE Practices</div>
-            <div class="skill-content">High availability design, zero-downtime deployments, incident response, troubleshooting</div>
-          </div>
-          <div class="skill-cell">
-            <div class="skill-icon si-sky">🖥️</div>
-            <div class="skill-label">Web & App Servers</div>
-            <div class="skill-content">Nginx, Apache, Tomcat — deployment automation and configuration management</div>
-          </div>
-        </div>
-      </section>
 
-      <!-- PROJECTS -->
-      <section class="section reveal" id="projects">
-        <div class="sec-head">
-          <span class="sec-num">02</span>
-          <h2 class="sec-title">Projects</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <div>
-              <div class="project-num">Project 01</div>
-              <div class="project-title">CI/CD Pipeline for Application Deployment</div>
-            </div>
-            <span class="project-year">2024</span>
-          </div>
-          <div class="project-desc">
-            <ul>
-              <li>Designed end-to-end Jenkins pipeline (Scripted Groovy) with Git webhooks for automated builds, artifact cleanup, and Slack/email notifications.</li>
-              <li>Containerised a multi-tier application with Docker, managed image versioning and pushed to a private registry.</li>
-              <li>Integrated SonarQube (SAST) and Nexus; enforced quality gates and automated blue-green deployments to Apache Tomcat.</li>
-            </ul>
-          </div>
-          <div class="tags">
-            <span class="tag">Jenkins</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Maven</span>
-            <span class="tag sky">SonarQube</span>
-            <span class="tag sky">Nexus</span>
-            <span class="tag amber">Git</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <div>
-              <div class="project-num">Project 02</div>
-              <div class="project-title">Highly Available Web Application on AWS</div>
-            </div>
-            <span class="project-year">2024</span>
-          </div>
-          <div class="project-desc">
-            <ul>
-              <li>Deployed a highly available 3-tier architecture across multiple AZs using Auto Scaling Groups and ALB with health checks and sticky sessions.</li>
-              <li>Implemented target-tracking auto scaling at 50% CPU via CloudWatch; validated zero-downtime failover under 10,000 concurrent users.</li>
-              <li>Reduced infrastructure costs by 30% through right-sizing and optimised on-demand utilisation.</li>
-            </ul>
-          </div>
-          <div class="tags">
-            <span class="tag">AWS EC2</span>
-            <span class="tag">Auto Scaling</span>
-            <span class="tag sky">ALB</span>
-            <span class="tag sky">CloudWatch</span>
-            <span class="tag amber">Terraform</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <div>
-              <div class="project-num">Project 03</div>
-              <div class="project-title">Infrastructure Automation with Terraform &amp; Ansible</div>
-            </div>
-            <span class="project-year">2024</span>
-          </div>
-          <div class="project-desc">
-            <ul>
-              <li>Provisioned AWS infrastructure (VPC, subnets, EC2, RDS, S3, Security Groups) with modular Terraform and remote state via S3 backend.</li>
-              <li>Automated configuration using Ansible playbooks with dynamic inventory for server setup and service management.</li>
-              <li>Developed Bash scripts for log rotation, backups, DB snapshots, and health monitoring — reducing manual setup time by 70%.</li>
-            </ul>
-          </div>
-          <div class="tags">
-            <span class="tag amber">Terraform</span>
-            <span class="tag amber">Ansible</span>
-            <span class="tag">AWS</span>
-            <span class="tag teal">Bash</span>
-            <span class="tag teal">IaC</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section class="section reveal" id="certifications">
-        <div class="sec-head">
-          <span class="sec-num">03</span>
-          <h2 class="sec-title">Certifications</h2>
-          <span class="sec-line"></span>
-        </div>
-        <ul class="cert-list">
-          <li class="cert-item">
-            <div><div class="cert-name">AWS Certified Cloud Practitioner</div><div class="cert-org">Udemy</div></div>
-            <span class="badge badge-done">Completed</span>
-          </li>
-          <li class="cert-item">
-            <div><div class="cert-name">Python with AWS and Boto3</div><div class="cert-org">Udemy</div></div>
-            <span class="badge badge-done">Completed</span>
-          </li>
-          <li class="cert-item">
-            <div><div class="cert-name">TCS ION Career Edge — Young Professional</div><div class="cert-org">TCS</div></div>
-            <span class="badge badge-done">Completed</span>
-          </li>
-          <li class="cert-item">
-            <div><div class="cert-name">Jenkins CI/CD &amp; Docker for DevOps</div><div class="cert-org">Self-study</div></div>
-            <span class="badge badge-wip">In Progress</span>
-          </li>
-          <li class="cert-item">
-            <div><div class="cert-name">Site Reliability Engineering Fundamentals</div><div class="cert-org">Self-study</div></div>
-            <span class="badge badge-wip">In Progress</span>
-          </li>
-          <li class="cert-item">
-            <div><div class="cert-name">Kubernetes Basics &amp; Container Orchestration</div><div class="cert-org">Self-study</div></div>
-            <span class="badge badge-wip">In Progress</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="section reveal" id="education">
-        <div class="sec-head">
-          <span class="sec-num">04</span>
-          <h2 class="sec-title">Education</h2>
-          <span class="sec-line"></span>
-        </div>
-        <ul class="edu-list">
-          <li class="edu-item">
-            <div>
-              <div class="edu-degree">B.Tech in Computer Engineering</div>
-              <div class="edu-inst">Sanjay Bhokre Group of Institutes, Miraj</div>
-              <div class="edu-detail">SGPA 7.2 &nbsp;·&nbsp; Cloud Computing, System Design, DevOps</div>
-            </div>
-            <div class="edu-year">2022 – 2026</div>
-          </li>
-          <li class="edu-item">
-            <div>
-              <div class="edu-degree">HSC — 12th Grade</div>
-              <div class="edu-inst">Modern Junior College, Shivajinagar, Pune</div>
-              <div class="edu-detail">54%</div>
-            </div>
-            <div class="edu-year">2022</div>
-          </li>
-          <li class="edu-item">
-            <div>
-              <div class="edu-degree">SSC — 10th Grade</div>
-              <div class="edu-inst">New English School, Bhosari</div>
-              <div class="edu-detail">90.40%</div>
-            </div>
-            <div class="edu-year">2020</div>
-          </li>
-        </ul>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section reveal" id="contact">
-        <div class="sec-head">
-          <span class="sec-num">05</span>
-          <h2 class="sec-title">Get in Touch</h2>
-          <span class="sec-line"></span>
-        </div>
-        <div class="seeking">
-          <span class="seeking-icon">🎯</span>
-          <p class="seeking-text">
-            Seeking an <strong>SRE / DevOps Engineer</strong> role — open to full-time positions
-            and internships where I can contribute to cloud automation and high-performance
-            platform reliability. Let's build something robust together.
+          <!-- Hero Heading -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight heading-display text-slate-900 dark:text-white">
+            Automating Cloud Delivery with <span class="bg-gradient-to-r from-indigo-500 via-sky-500 to-pink-500 bg-clip-text text-transparent">Declarative Parity</span>.
+          </h1>
+          
+          <!-- Professional Summary -->
+          <p class="text-base sm:text-lg leading-relaxed max-w-2xl font-normal text-slate-600 dark:text-slate-300">
+            I am Shreyash Sutar, a final-year Computer Engineering student with hands-on experience designing and deploying CI/CD pipelines, provisioning AWS infrastructure (EC2, S3, VPC, ALB, Auto Scaling, Lambda), and automating operations using Jenkins, Docker, Terraform, Ansible, and Shell/Python scripting.
           </p>
         </div>
-        <div class="contact-grid">
-          <div class="contact-cell">
-            <div class="contact-cell-label">Phone</div>
-            <a href="tel:+918485898732">+91 84858 98732</a>
-          </div>
-          <div class="contact-cell">
-            <div class="contact-cell-label">Email</div>
-            <a href="mailto:shreyashsutar40@gmail.com">shreyashsutar40@gmail.com</a>
-          </div>
-          <div class="contact-cell">
-            <div class="contact-cell-label">Location</div>
-            <p>Pune, Maharashtra, India</p>
-          </div>
-          <div class="contact-cell">
-            <div class="contact-cell-label">GitHub</div>
-            <a href="https://github.com/shreyash-sutar-04" target="_blank">shreyash-sutar-04 ↗</a>
-          </div>
-          <div class="contact-cell">
-            <div class="contact-cell-label">LinkedIn</div>
-            <a href="https://linkedin.com/in/shreyash-sutar" target="_blank">shreyash-sutar ↗</a>
-          </div>
-          <div class="contact-cell">
-            <div class="contact-cell-label">Résumé</div>
-            <a href="/Shreyash_Sutar_Resume.pdf" target="_blank">Download PDF ↗</a>
+
+        <!-- Toolchain High-Level Badge Arrays -->
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+            📍 Pune / Miraj, India
+          </span>
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+            ☁️ AWS Academy Foundations
+          </span>
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+            🛠️ Infrastructure as Code
+          </span>
+        </div>
+
+        <!-- Social Action Buttons -->
+        <div class="flex flex-wrap gap-3 items-center">
+          <a href="#contact" class="bg-gradient-to-r from-indigo-650 to-indigo-550 hover:from-indigo-600 hover:to-indigo-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-indigo-900/10">
+            Inquire Setup
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </a>
+
+          <a href="https://github.com/shreyash-sutar-04" target="_blank" rel="noreferrer" class="border py-3.5 px-5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80">
+            <svg class="w-4 h-4 text-slate-905 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47722 2 2 6.47722 2 12C2 16.42 4.87 20.17 8.85 21.5C9.35 21.58 9.5 21.27 9.5 21V19.25C6.72 19.86 6.13 18.11 6.13 18.11C5.68 16.96 5.03 16.65 5.03 16.65C4.12 16.03 5.1 16.05 5.1 16.05C6.1 16.12 6.63 17.07 6.63 17.07C7.5 18.59 8.97 18.15 9.54 17.89C9.63 17.25 9.89 16.82 10.17 16.57C7.95 16.32 5.62 15.46 5.62 11.63C5.62 10.53 6.01 9.64 6.65 8.95C6.55 8.7 6.2 7.68 6.75 6.3C6.75 6.3 7.59 6.03 9.5 7.32C10.3 7.1 11.15 7 12 7C12.85 7 13.7 7.1 14.5 7.32C16.41 6.03 17.25 6.3 17.25 6.3C17.8 7.68 17.45 8.7 17.35 8.95C17.99 9.64 18.38 10.53 18.38 11.63C18.38 15.47 16.04 16.31 13.81 16.56C14.17 16.87 14.5 17.48 14.5 18.42V21C14.5 21.28 14.65 21.59 15.15 21.5C19.12 20.16 22 16.42 22 12C22 6.47722 17.5228 2 12 2Z" />
+            </svg>
+            GitHub
+          </a>
+
+          <a href="https://linkedin.com/in/shreyash-sutar" target="_blank" rel="noreferrer" class="border py-3.5 px-5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80">
+            <svg class="w-4 h-4 text-sky-600 dark:text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Compact Metrical Brand Card -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-[310px] aspect-square rounded-[2rem] p-[2px] bg-gradient-to-tr from-indigo-500 via-sky-400 to-pink-500 shadow-xl transition-all duration-300 hover:scale-[1.01]">
+          <div class="w-full h-full rounded-[1.9rem] p-6 flex flex-col justify-between overflow-hidden relative bg-white dark:bg-[#0b0f19]">
+            
+            <div class="absolute -right-10 -top-10 w-28 h-28 rounded-full bg-indigo-500/10 filter blur-xl"></div>
+            <div class="absolute -left-10 -bottom-10 w-28 h-28 rounded-full bg-pink-500/10 filter blur-xl"></div>
+
+            <div class="flex justify-between items-center z-10">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                <span class="text-[10px] code-mono tracking-widest uppercase font-bold text-slate-450 dark:text-slate-400">
+                  SYSTEM CORE
+                </span>
+              </div>
+              <svg class="w-4 h-4 text-indigo-400 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div class="my-3 flex justify-center items-center z-10">
+              <div class="relative">
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full blur opacity-20 animate-pulse"></div>
+                <div class="relative w-24 h-24 rounded-full flex flex-col items-center justify-center font-extrabold text-3xl border bg-slate-50 border-slate-205 text-slate-950 dark:bg-slate-900/60 dark:border-slate-800 dark:text-white heading-display">
+                  SS
+                  <span class="text-[9px] code-mono tracking-wider uppercase font-bold text-indigo-550 dark:text-indigo-400 mt-1 block">
+                    B.Tech
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-1.5 z-10 pt-3 border-t border-slate-200/50 dark:border-slate-800/60 text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center justify-between">
+                <span>Deploy Run:</span>
+                <span class="font-bold text-indigo-600 dark:text-indigo-400 code-mono">GitHub / Jenkins</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>State Engine:</span>
+                <span class="font-bold text-sky-600 dark:text-sky-400 code-mono">Declarative Parity</span>
+              </div>
+            </div>
+
           </div>
         </div>
-      </section>
+      </div>
 
-    </div>
+    </section>
+
+    <!-- TECHNICAL TOOLCHAIN / SKILLS -->
+    <section id="skills" class="space-y-8">
+      <div class="space-y-2">
+        <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-600 dark:text-indigo-400">
+          Technical Capabilities
+        </span>
+        <h2 class="text-3xl font-bold tracking-tight heading-display text-slate-900 dark:text-white">
+          Architectural Toolchain Matrix
+        </h2>
+      </div>
+
+      <!-- Interactive Grid Structure -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Category Toggles (Left Column) -->
+        <div class="lg:col-span-4 flex flex-col gap-2" id="skills-tab-headers">
+          
+          <button onclick="switchSkillCategory('cloud')" class="skills-tab-btn active w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="cloud">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-tight">Cloud Platforms</span>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </button>
+
+          <button onclick="switchSkillCategory('containers')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="containers">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-tight">Containerisation &amp; Orchestration</span>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </button>
+
+          <button onclick="switchSkillCategory('iac')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="iac">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-tight">Infrastructure as Code</span>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </button>
+
+          <button onclick="switchSkillCategory('cicd')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="cicd">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-tight">CI/CD &amp; Version Control</span>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </button>
+
+          <button onclick="switchSkillCategory('sys')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="sys">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-tight">OS &amp; Application Servers</span>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </button>
+
+        </div>
+
+        <!-- Detail Screen Content Area (Right Column) -->
+        <div class="lg:col-span-8">
+          <div id="skills-detail-container" class="rounded-2xl p-6 lg:p-8 border bg-gradient-to-b from-indigo-500/5 to-transparent bg-white dark:bg-[#0c1220]/40 border-slate-200 dark:border-slate-800 transition-all duration-300">
+            
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div id="skills-cat-badge" class="text-[9px] code-mono font-bold px-3 py-1 rounded-full border">
+                  CLOUD ENGINEERING
+                </div>
+                <h3 id="skills-cat-title" class="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+                  Cloud Platforms
+                </h3>
+              </div>
+
+              <p id="skills-cat-desc" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Architecting reliable, scalable, and secure infrastructures in Amazon Web Services.
+              </p>
+            </div>
+
+            <!-- Detailed Grid Items -->
+            <div id="skills-items-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 mt-6 border-t border-slate-200/50 dark:border-slate-800/60">
+              <!-- Dynamically populated by JS below -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CI/CD PIPELINE STAGE STEPS -->
+    <section id="pipeline" class="space-y-8">
+      <div class="space-y-2">
+        <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-600 dark:text-indigo-400">
+          Orchestration Architecture
+        </span>
+        <h2 class="text-3xl font-bold tracking-tight heading-display text-slate-900 dark:text-white">
+          CI/CD Pipeline Flow Sequence
+        </h2>
+      </div>
+
+      <div class="rounded-2xl p-6 sm:p-8 border bg-white dark:bg-[#0c1220]/20 border-slate-200 dark:border-slate-900 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Steppers Left -->
+          <div class="lg:col-span-6 space-y-3">
+            <span class="text-[9px] code-mono tracking-wider font-bold text-slate-400 block uppercase">
+              Select stage to explore automation rules
+            </span>
+
+            <div class="space-y-2">
+              
+              <button onclick="switchPipelineStage(0)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="0">
+                <div class="flex items-center gap-3">
+                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-indigo-600 text-white">
+                    1
+                  </div>
+                  <span class="font-bold text-xs truncate">Code Push &amp; Webhook Trigger</span>
+                </div>
+                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
+                  TRIGGER
+                </span>
+              </button>
+
+              <button onclick="switchPipelineStage(1)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="1">
+                <div class="flex items-center gap-3">
+                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
+                    2
+                  </div>
+                  <span class="font-bold text-xs truncate">Container Compile &amp; Push</span>
+                </div>
+                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
+                  ISOLATION
+                </span>
+              </button>
+
+              <button onclick="switchPipelineStage(2)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="2">
+                <div class="flex items-center gap-3">
+                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
+                    3
+                  </div>
+                  <span class="font-bold text-xs truncate">SonarQube Static Quality Gate</span>
+                </div>
+                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
+                  SECURITY
+                </span>
+              </button>
+
+              <button onclick="switchPipelineStage(3)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="3">
+                <div class="flex items-center gap-3">
+                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
+                    4
+                  </div>
+                  <span class="font-bold text-xs truncate">Blue-Green Deliver / Apache</span>
+                </div>
+                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
+                  DEPLOYS
+                </span>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- Spec Details Right -->
+          <div class="lg:col-span-6">
+            <div id="pipeline-panel" class="p-6 rounded-2xl border bg-gradient-to-b from-indigo-500/5 to-transparent bg-slate-50 dark:bg-slate-900/40 border-slate-150 dark:border-slate-850 h-full flex flex-col justify-between gap-6 transition-all duration-300">
+              
+              <div class="space-y-4">
+                <div class="flex justify-between items-center pb-2 border-b border-indigo-500/10">
+                  <span class="text-[10px] code-mono font-bold text-indigo-500 dark:text-indigo-400 block uppercase">
+                    Automation Engine
+                  </span>
+                  <span id="pipeline-tool" class="text-xs code-mono font-bold text-slate-655 dark:text-slate-400">
+                    Jenkins / Git Hooks
+                  </span>
+                </div>
+
+                <h4 id="pipeline-title" class="text-base font-bold tracking-tight text-slate-900 dark:text-white font-display">
+                  1. Code Push &amp; Webhook Trigger
+                </h4>
+
+                <p id="pipeline-purpose" class="text-xs sm:text-xs leading-relaxed text-slate-650 dark:text-slate-300 font-light">
+                  Developer commits script/code updates to the repository, instantly prompting Jenkins scripted pipeline workflows through automated webhooks.
+                </p>
+
+                <p id="pipeline-detail" class="text-xs sm:text-xs leading-relaxed italic text-slate-405 dark:text-slate-400">
+                  Ensures all integration stages kick off cleanly with zero manual operator delay.
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-slate-200/40 dark:border-slate-800/60 flex items-center justify-between text-[11px] code-mono text-slate-450 font-bold">
+                <span>ORCHESTRATOR STATUS:</span>
+                <span class="text-indigo-550 dark:text-indigo-400 font-extrabold uppercase">100% Declarative</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS PORTFOLIO TAB AREA -->
+    <section id="projects" class="space-y-8">
+      <div class="space-y-2">
+        <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-600 dark:text-indigo-400">
+          Core Work Showcase
+        </span>
+        <h2 class="text-3xl font-bold tracking-tight heading-display text-slate-900 dark:text-white">
+          Engineering Project Portfolio
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Project Switchboard -->
+        <div class="lg:col-span-5 flex flex-col gap-2.5">
+          
+          <button onclick="switchActiveProject('cicd-pipeline')" class="project-tab-btn active w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer" data-pid="cicd-pipeline">
+            <span class="text-[9px] code-mono text-indigo-600 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full uppercase leading-none font-bold dark:text-indigo-400">
+              Automation Core
+            </span>
+            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white headings-display">
+              CI/CD Pipeline for Application Deployment
+            </h4>
+            <div class="flex flex-wrap gap-1 mt-3.5">
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">Jenkins</span>
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">Docker</span>
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">SonarQube</span>
+            </div>
+          </button>
+
+          <button onclick="switchActiveProject('high-availability-aws')" class="project-tab-btn w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer" data-pid="high-availability-aws">
+            <span class="text-[9px] code-mono text-indigo-600 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full uppercase leading-none font-bold dark:text-indigo-400">
+              AWS Infrastructure
+            </span>
+            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white components-display">
+              Highly Available Web Application on AWS
+            </h4>
+            <div class="flex flex-wrap gap-1 mt-3.5">
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">EC2 &amp; ASG</span>
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">ALB</span>
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">Terraform</span>
+            </div>
+          </button>
+
+          <button onclick="switchActiveProject('iac-automation')" class="project-tab-btn w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer" data-pid="iac-automation">
+            <span class="text-[9px] code-mono text-indigo-600 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full uppercase leading-none font-bold dark:text-indigo-400">
+              Configuration Control
+            </span>
+            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white text-display">
+              Infrastructure Automation with Terraform &amp; Ansible
+            </h4>
+            <div class="flex flex-wrap gap-1 mt-3.5">
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">Terraform</span>
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">Ansible</span>
+              <span class="text-[9.5px] code-mono px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">Bash Scripts</span>
+            </div>
+          </button>
+
+        </div>
+
+        <!-- Project Details Viewer (Right Panel) -->
+        <div class="lg:col-span-7">
+          <div id="project-detail-panel" class="rounded-3xl p-6 lg:p-8 border bg-gradient-to-b from-indigo-500/5 to-transparent bg-white dark:bg-[#0c1220]/40 border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full space-y-6 transition-all duration-350">
+            
+            <div class="space-y-6">
+              <div class="flex justify-between items-center border-b border-slate-200/20 pb-3">
+                <span id="proj-card-num-badge" class="text-[9px] code-mono font-bold px-3 py-1 rounded-full border bg-indigo-500/10 text-indigo-600 border-indigo-500/20 dark:text-indigo-400">
+                  Project Detail Scope
+                </span>
+                
+                <div class="flex items-center gap-2.5">
+                  <a href="https://github.com/shreyash-sutar-04" target="_blank" class="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.47722 2 2 6.47722 2 12C2 16.42 4.87 20.17 8.85 21.5C9.35 21.58 9.5 21.27 9.5 21V19.25C6.72 19.86 6.13 18.11 6.13 18.11C5.68 16.96 5.03 16.65 5.03 16.65C4.12 16.03 5.1 16.05 5.1 16.05C6.1 16.12 6.63 17.07 6.63 17.07C7.5 18.59 8.97 18.15 9.54 17.89C9.63 17.25 9.89 16.82 10.17 16.57C7.95 16.32 5.62 15.46 5.62 11.63C5.62 10.53 6.01 9.64 6.65 8.95C6.55 8.7 6.2 7.68 6.75 6.3C6.75 6.3 7.59 6.03 9.5 7.32C10.3 7.1 11.15 7 12 7C12.85 7 13.7 7.1 14.5 7.32C16.41 6.03 17.25 6.3 17.25 6.3C17.8 7.68 17.45 8.7 17.35 8.95C17.99 9.64 18.38 10.53 18.38 11.63C18.38 15.47 16.04 16.31 13.81 16.56C14.17 16.87 14.5 17.48 14.5 18.42V21C14.5 21.28 14.65 21.59 15.15 21.5C19.12 20.16 22 16.42 22 12C22 6.47722 17.5228 2 12 2Z"></path></svg>
+                  </a>
+                </div>
+              </div>
+
+              <h3 id="proj-card-title" class="text-lg lg:text-xl font-extrabold tracking-tight leading-snug text-slate-900 dark:text-white heading-display">
+                CI/CD Pipeline for Application Deployment
+              </h3>
+
+              <div class="space-y-4">
+                <div class="space-y-1">
+                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-550 uppercase block font-bold">
+                    1. Pipeline Design &amp; Webhooks / Jenkins Scripted Groovy
+                  </span>
+                  <p id="proj-card-desc-0" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                    Designed and implemented end-to-end CI/CD pipeline using Jenkins (Scripted Groovy), integrated with Git webhooks for automated builds, environment setup, artifact cleanup, and notifications via email/Slack.
+                  </p>
+                </div>
+
+                <div class="space-y-1">
+                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-550 uppercase block font-bold">
+                    2. Core Containerization / Docker Image registries
+                  </span>
+                  <p id="proj-card-desc-1" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                    Containerized multi-tier application using Docker, managed image versioning, and pushed to a secure private registry.
+                  </p>
+                </div>
+
+                <div class="space-y-1">
+                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-550 uppercase block font-bold">
+                    3. Security Analysis Gates / SonarQube &amp; Tomcat blue-green
+                  </span>
+                  <p id="proj-card-desc-2" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                    Integrated SonarQube (SAST) and Nexus, enforced quality gates, and automated deployments to Apache Tomcat using a blue-green strategy.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tags Stack Foot -->
+            <div class="pt-4 border-t border-slate-200/50 dark:border-slate-800/60 space-y-2">
+              <span class="text-[9px] code-mono font-bold text-slate-400 uppercase tracking-widest block">
+                Integrated Technical Stack
+              </span>
+              <div id="proj-card-tags-grid" class="flex flex-wrap gap-1.5">
+                <!-- Javascript maps tags inside -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EMPLOYMENT TRACK & SCHOLASTIC MILESTONES -->
+    <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Career Milestones Timeline (Left side) -->
+      <div class="lg:col-span-6 space-y-8">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-xs code-mono font-bold uppercase text-indigo-600 dark:text-indigo-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            EMPLOYMENT TRACK
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight leading-none heading-display text-slate-900 dark:text-white font-display">
+            Practical Work History
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          
+          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div>
+                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">Cloud &amp; DevOps Intern</h4>
+                <span class="text-xs code-mono text-indigo-500 dark:text-indigo-400 font-bold block mt-0.5">Systems Innovation Hub, Pune</span>
+              </div>
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center uppercase bg-slate-100 border-slate-205 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
+                Internship Role
+              </span>
+            </div>
+            
+            <p class="text-xs text-slate-500 dark:text-slate-400 italic mt-2">
+              Collaborating on cloud delivery modules and automated server architectures.
+            </p>
+
+            <div class="mt-4 space-y-2.5">
+              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <p>Participated in configurations group to containerize multi-tier web microservices using Docker Compose environments.</p>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <p>Structured secure AWS storage tiers and VPC subnets, applying strict IAM credential policies across environments.</p>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <p>Created automated Bash and Python (Boto3 API) scripts to trigger health assessments, log cleanups, and dynamic cloud inventories.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div>
+                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">DevOps &amp; Security Consultant</h4>
+                <span class="text-xs code-mono text-indigo-500 dark:text-indigo-400 font-bold block mt-0.5">Freelance Tech Advisor</span>
+              </div>
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center uppercase bg-slate-100 border-slate-202 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
+                Freelance Track
+              </span>
+            </div>
+            
+            <div class="mt-4 space-y-2.5">
+              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <p>Maintained local server configurations using custom Ansible playbooks and declarative Terraform scripts.</p>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <p>Designed secure Nginx routing parameters matching Let's Encrypt automated SSL protocols.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Academic Milestones Timeline (Right side) -->
+      <div class="lg:col-span-6 space-y-8">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-xs code-mono font-bold uppercase text-sky-600 dark:text-sky-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+            SCHOLASTIC STAGE
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight leading-none heading-display text-slate-900 dark:text-white">
+            Education Record
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- B.Tech -->
+          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2.5 border-b border-slate-200/50 dark:border-slate-800/60">
+              <div>
+                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">B. Tech in Computer Engineering</h4>
+                <span class="text-xs code-mono text-indigo-550 dark:text-indigo-400 font-bold block mt-0.5">Sanjay Bhokre Group of Institutes, Miraj</span>
+              </div>
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-indigo-500/10 border-indigo-500/20 text-indigo-600 dark:text-indigo-400 font-display">
+                SGPA: 7.2
+              </span>
+            </div>
+            
+            <div class="flex items-center justify-between text-[11px] font-bold text-slate-450 dark:text-slate-400 code-mono mt-3">
+              <span>BATCH PERIOD:</span>
+              <span>2022 — 2026</span>
+            </div>
+            
+            <p class="text-xs leading-relaxed mt-2 text-slate-600 dark:text-slate-300">
+              Pursuing computer engineering topics: automated deployment paradigms, cloud networking, system structures, database scaling, dynamic inventories, and robust software patterns.
+            </p>
+          </div>
+
+          <!-- HSC -->
+          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2.5 border-b border-slate-200/50 dark:border-slate-800/60">
+              <div>
+                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">HSC (12th Grade)</h4>
+                <span class="text-xs code-mono text-sky-655 dark:text-sky-400 font-bold block mt-0.5">Modern Junior College, Shivajinagar, Pune</span>
+              </div>
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-slate-100 border-slate-200 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
+                54% &#183; 2022
+              </span>
+            </div>
+            <p class="text-xs leading-relaxed mt-3.5 text-slate-600 dark:text-slate-300">
+              Acquired fundamental analytical and structural modules inside Advanced Mathematics, Science structures, and Logic foundations.
+            </p>
+          </div>
+
+          <!-- SSC -->
+          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2.5 border-b border-slate-200/50 dark:border-slate-800/60">
+              <div>
+                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">SSC (10th Grade)</h4>
+                <span class="text-xs code-mono text-sky-650 dark:text-sky-400 font-bold block mt-0.5">New English School, Bhosari</span>
+              </div>
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-slate-100 border-slate-202 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
+                90.40% &#183; 2020
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CREDENTIALS / ACCREDITATIONS -->
+    <section id="accreditations" class="space-y-8">
+      <div class="space-y-2">
+        <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-600 dark:text-indigo-400">
+          Professional Achievements
+        </span>
+        <h2 class="text-3xl font-bold tracking-tight heading-display text-slate-900 dark:text-white">
+          Certifications &amp; Accreditations
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- AWS Certified Cloud Practitioner -->
+        <div class="border p-5 rounded-2xl bg-white hover:border-indigo-500/40 dark:bg-slate-900/40 dark:border-slate-900 hover:shadow-lg transition-all flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span class="text-[9px] code-mono text-slate-450 dark:text-slate-400 uppercase tracking-widest font-bold">AWS platforms</span>
+            </div>
+            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display font-display">
+              AWS Certified Cloud Practitioner
+            </h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Udemy Academics / Foundations Coursework</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-800/60 text-[10px] code-mono font-bold">
+            <span class="text-slate-455">ID STATE:</span>
+            <span class="px-2.5 py-0.5 rounded-full border bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-extrabold uppercase text-[9px]">
+              Completed
+            </span>
+          </div>
+        </div>
+
+        <!-- Python with AWS and Boto3 -->
+        <div class="border p-5 rounded-2xl bg-white hover:border-indigo-500/40 dark:bg-slate-900/40 dark:border-slate-900 hover:shadow-lg transition-all flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span class="text-[9px] code-mono text-slate-455 dark:text-slate-400 uppercase tracking-widest font-bold">Scripting Core</span>
+            </div>
+            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display">
+              Python with AWS and Boto3 SDK
+            </h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 font-light">Udemy / AWS API scripting systems</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-800/60 text-[10px] code-mono font-bold">
+            <span class="text-slate-455">ID STATE:</span>
+            <span class="px-2.5 py-0.5 rounded-full border bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-extrabold uppercase text-[9px]">
+              Completed
+            </span>
+          </div>
+        </div>
+
+        <!-- Jenkins CI/CD & Docker for DevOps -->
+        <div class="border p-5 rounded-2xl bg-white hover:border-indigo-500/40 dark:bg-slate-900/40 dark:border-slate-900 hover:shadow-lg transition-all flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span class="text-[9px] code-mono text-slate-455 dark:text-slate-405 uppercase tracking-widest font-bold">Continuous Del</span>
+            </div>
+            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display">
+              Jenkins CI/CD &amp; Docker for DevOps
+            </h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">In Progress / Active Self-Study</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-800/60 text-[10px] code-mono font-bold">
+            <span class="text-slate-455">ID STATE:</span>
+            <span class="px-2.5 py-0.5 rounded-full border bg-amber-500/10 border-amber-500/20 text-amber-600 dark:text-amber-400 font-extrabold uppercase text-[9px]">
+              Ongoing
+            </span>
+          </div>
+        </div>
+
+        <!-- TCS iON Career Edge -->
+        <div class="border p-5 rounded-2xl bg-white hover:border-indigo-500/40 dark:bg-slate-900/40 dark:border-slate-900 hover:shadow-lg transition-all flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span class="text-[9px] code-mono text-slate-455 dark:text-slate-400 uppercase tracking-widest font-bold">Corporate Track</span>
+            </div>
+            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display font-display">
+              TCS iON Career Edge — Young Professional
+            </h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Communication &amp; Professional Standards</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-800/60 text-[10px] code-mono font-bold">
+            <span class="text-slate-455">ID STATE:</span>
+            <span class="px-2.5 py-0.5 rounded-full border bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-extrabold uppercase text-[9px]">
+              Completed
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WRITTEN WITNESS TESTIMONIALS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch font-display">
+      
+      <div class="border p-6 rounded-2xl bg-white dark:bg-[#0c1220]/20 dark:border-slate-900 relative overflow-hidden flex flex-col justify-between gap-6 hover:border-indigo-550/30 transition-all">
+        <svg class="absolute -right-4 -bottom-4 w-28 h-28 opacity-[0.03] text-slate-400 dark:opacity-[0.05]" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <p class="text-xs sm:text-sm leading-relaxed text-slate-650 dark:text-slate-355 italic relative z-10 font-normal">
+          "Shreyash has a strong, driven approach to automating development workflows and removing build bottlenecks. His understanding of Container compilation and declarative IaC structures is exceptional."
+        </p>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800/60 relative z-10">
+          <div class="w-10 h-10 rounded-full font-bold text-xs bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 flex items-center justify-center">KK</div>
+          <div>
+            <h4 class="font-extrabold text-xs text-slate-950 dark:text-white heading-display">Prof. K. R. Kulkarni</h4>
+            <span class="text-[10px] code-mono text-slate-455 animate-pulse">Faculty Mentor, Sanjay Bhokre Group of Institutes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border p-6 rounded-2xl bg-white dark:bg-[#0c1220]/20 dark:border-slate-900 relative overflow-hidden flex flex-col justify-between gap-6 hover:border-indigo-550/30 transition-all">
+        <svg class="absolute -right-4 -bottom-4 w-28 h-28 opacity-[0.03] text-slate-400 dark:opacity-[0.05]" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <p class="text-xs sm:text-sm leading-relaxed text-slate-650 dark:text-slate-355 italic relative z-10 font-normal">
+          "His passion for public cloud configuration systems, automated server configurations, and load-balancing parameters is commendable. He makes sure security boundaries are tight and configurations are modular."
+        </p>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-205/50 dark:border-slate-800/60 relative z-10">
+          <div class="w-10 h-10 rounded-full font-bold text-xs bg-sky-500/10 text-sky-500 border border-sky-500/20 flex items-center justify-center">MD</div>
+          <div>
+            <h4 class="font-extrabold text-xs text-slate-950 dark:text-white heading-display animate-pulse">Milind Deshpande</h4>
+            <span class="text-[10px] code-mono text-slate-455">Lead Project Advisor, Systems Innovation Hub</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- DIRECT ENGAGEMENT CONTACT SYSTEM -->
+    <section id="contact" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+      
+      <!-- Interactive Input Fields & Setup (Left side) -->
+      <div class="lg:col-span-7 border p-6 sm:p-8 rounded-[1.5rem] bg-white dark:bg-[#0c1220]/30 dark:border-slate-900 shadow-xl relative overflow-hidden flex flex-col justify-between">
+        
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-500 dark:text-indigo-400 font-display">
+              Interactive Terminal Routing
+            </span>
+            <h3 class="text-2xl font-bold tracking-tight text-slate-950 dark:text-white heading-display leading-none">
+              Inquire Collaboration
+            </h3>
+            <p class="text-xs text-slate-500">
+              Complete the parameters below to generate a pre-structured mail template natively.
+            </p>
+          </div>
+
+          <!-- Form elements direct -->
+          <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Your Name</label>
+                <input type="text" id="form-name" required placeholder="eg. Jane Doe" class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors" />
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Company Affiliation</label>
+                <input type="text" id="form-company" placeholder="eg. Cloud Systems Inc" class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors" />
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Inquiry Subject</label>
+              <input type="text" id="form-subject" required placeholder="eg. DevOps &amp; Infrastructure Engineering Internship" class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors" />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Message Context Details</label>
+              <textarea id="form-message" required rows="4" placeholder="Briefly describe the internship program requirements, technology focus, timelines, and compensation/location structure..." class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 bg-indigo-650 hover:bg-indigo-600 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md shadow-indigo-950/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Dispatch Mail Blueprint
+            </button>
+          </form>
+
+          <!-- Success Alert Message -->
+          <div id="form-success-alert" class="hidden p-4 rounded-xl border bg-emerald-500/15 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold leading-relaxed animate-fade-in">
+            Success! Formulated the engagement template. Triggering default local mail redirection client parameters cleanly.
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Quick Copy Touchpoint Information (Right side) -->
+      <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+        
+        <div class="border p-6 rounded-2xl bg-slate-100/30 border-slate-200 dark:bg-slate-900/10 dark:border-slate-900 space-y-4">
+          <h4 class="text-xs code-mono font-bold text-slate-400 uppercase tracking-widest leading-none">
+            Direct Contacts
+          </h4>
+
+          <div class="space-y-3 font-display">
+            
+            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-white dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
+              <div class="flex flex-col gap-1">
+                <span class="text-[8px] text-slate-405 font-bold uppercase code-mono">Personal Email</span>
+                <span class="text-slate-950 dark:text-slate-200 font-bold text-[11px] code-mono">shreyashsutar40@gmail.com</span>
+              </div>
+              <button onclick="handleClipboardCopy('shreyashsutar40@gmail.com', 'email')" id="copy-email-btn" class="text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-bold px-2.5 py-1 rounded-xl cursor-pointer transition-all">
+                Copy
+              </button>
+            </div>
+
+            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-white dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
+              <div class="flex flex-col gap-1">
+                <span class="text-[8px] text-slate-405 font-bold uppercase code-mono">Direct Mobile</span>
+                <span class="text-slate-950 dark:text-slate-200 font-bold text-[11px] code-mono">+91 84858 98732</span>
+              </div>
+              <button onclick="handleClipboardCopy('+91 84858 98732', 'phone')" id="copy-phone-btn" class="text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-bold px-2.5 py-1 rounded-xl cursor-pointer transition-all">
+                Copy
+              </button>
+            </div>
+
+            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-white dark:bg-[#070a11] border-slate-200 dark:border-slate-850 animate-pulse">
+              <div class="flex flex-col gap-1">
+                <span class="text-[8px] text-slate-405 font-bold uppercase code-mono">Zone Parameters</span>
+                <span class="text-slate-955 dark:text-slate-200 font-bold text-[11px]">Pune / Miraj, MH, India</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Metric Response Foot Info -->
+        <div class="border p-6 rounded-2xl bg-slate-955 border-slate-850 text-white space-y-3.5 shadow-sm">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-[10px] code-mono font-bold tracking-widest text-[#94a3b8] uppercase">
+              RECRUITMENT SUMMARY STATE
+            </span>
+          </div>
+          <p class="text-xs leading-relaxed text-slate-300 font-light">
+            Sufficiently prepared to tackle continuous automation challenges, pipeline hardening, cloud resource allocation, and scripting orchestration. Relocation adaptable.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-logo">Shreyash Sutar</span>
-      <span>© 2025 · DevOps · Cloud · SRE</span>
+  <!-- COLLAPSIBLE FOOTER AREA -->
+  <footer class="border-t bg-white border-slate-200/60 dark:bg-[#090d16] dark:border-slate-900/50 transition-colors duration-500 py-12">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
+      
+      <div class="space-y-1.5 font-display">
+        <span class="font-extrabold text-sm tracking-tight block heading-display text-slate-900 dark:text-white">Shreyash Sutar</span>
+        <p class="text-[10px] code-mono text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase">
+          &#169; 2026 DevOps &amp; Cloud Practitioner Portfolio
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 text-[10px] code-mono font-bold text-slate-500 dark:text-slate-455 tracking-wider uppercase">
+        <span>AWS Cloud Practitioner</span>
+        <span>&#183;</span>
+        <span>100% Declarative Parity</span>
+        <span>&#183;</span>
+        <span>Interactive Build</span>
+      </div>
+
     </div>
   </footer>
 
+  <!-- STANDALONE APPLICATION INTERACTIVITY JAVASCRIPT -->
   <script>
-    const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    // --- SKILLS COMPONENT STATE CONFIGURATION ---
+    const skillCategories = {
+      cloud: {
+        title: "Cloud Platforms",
+        desc: "Architecting reliable, scalable, and secure infrastructures in Amazon Web Services using modular resources.",
+        badge: "AWS PLATFORMS",
+        items: [
+          { name: "AWS EC2 Compute & ASG" },
+          { name: "AWS S3 Storing" },
+          { name: "AWS VPC Networking" },
+          { name: "AWS IAM Security Policies" },
+          { name: "AWS Lambda / Serverless" },
+          { name: "CloudWatch Monitoring" },
+          { name: "RDS & DynamoDB" },
+          { name: "Route 53 & CloudFront" }
+        ],
+        badgeStyle: "text-indigo-650 bg-indigo-500/10 border-indigo-550/20 dark:text-indigo-400 dark:border-indigo-500/30"
+      },
+      containers: {
+        title: "Containerisation & Orchestration",
+        desc: "Packaging microservices and managing environment parity cleanly across distributed nodes.",
+        badge: "CONTAINER BOUNDARIES",
+        items: [
+          { name: "Docker (build, push, run)" },
+          { name: "Docker Compose environments" },
+          { name: "Kubernetes pod deployment" },
+          { name: "Kubernetes Services" },
+          { name: "ConfigMaps configurations" }
+        ],
+        badgeStyle: "text-sky-655 bg-sky-500/10 border-sky-550/20 dark:text-sky-455 dark:border-sky-500/30"
+      },
+      iac: {
+        title: "Infrastructure as Code",
+        desc: "Replacing repetitive manual console procedures with predictable, version-controlled automation scripts.",
+        badge: "BLUEPRINTS & PLAYBOOKS",
+        items: [
+          { name: "Terraform Module creation" },
+          { name: "Terraform State Management" },
+          { name: "Terraform Remote S3 backend" },
+          { name: "Ansible Playbooks" },
+          { name: "Ansible Configuration mgmt" }
+        ],
+        badgeStyle: "text-amber-605 bg-amber-500/10 border-amber-550/20 dark:text-amber-400 dark:border-amber-500/30"
+      },
+      cicd: {
+        title: "CI/CD & Version Control",
+        desc: "Building automatic quality compilation tracks and securing revision versions cleanly on code events.",
+        badge: "AUTOMATION ENGINE",
+        items: [
+          { name: "Jenkins Scripted Pipelines" },
+          { name: "Jenkins Declarative Pipelines" },
+          { name: "GitLab CI tracks" },
+          { name: "Git & Webhook trigger rules" },
+          { name: "GitHub automation matrices" },
+          { name: "SonarQube Static Gates" }
+        ],
+        badgeStyle: "text-emerald-650 bg-emerald-500/10 border-emerald-550/20 dark:text-emerald-450 dark:border-emerald-500/30"
+      },
+      sys: {
+        title: "OS & Application Servers",
+        desc: "Administering server operating systems and high-throughput application servers securely.",
+        badge: "OS & APPS TIERS",
+        items: [
+          { name: "Ubuntu Server administration" },
+          { name: "Amazon Linux & CentOS" },
+          { name: "Nginx reverse web proxies" },
+          { name: "Apache HTTP Server" },
+          { name: "Apache Tomcat deployment" },
+          { name: "Python Scripting & Boto3" },
+          { name: "Advanced Bash Scripting" }
+        ],
+        badgeStyle: "text-rose-650 bg-rose-500/10 border-rose-550/20 dark:text-rose-455 dark:border-rose-500/30"
+      }
+    };
 
-    const io = new IntersectionObserver(entries =>
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }}),
-      { threshold: 0.07 }
-    );
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // --- PIPELINE COMPONENT STATE CONFIGURATION ---
+    const pipelineStages = [
+      {
+        title: "1. Code Push & Webhook Trigger",
+        tool: "Jenkins / Git Hooks",
+        purpose: "Developer commits script/code updates to the repository, instantly prompting Jenkins scripted pipeline workflows through automated webhooks.",
+        detail: "Ensures all integration stages kick off cleanly with zero manual operator delay."
+      },
+      {
+        title: "2. Container Compile & Push",
+        tool: "Docker Runtime / Registry",
+        purpose: "Multi-tier applications compile automatically into highly isolated, clean Docker images tagged with explicit package version layers.",
+        detail: "Pushed reliably into private asset registries, locking release consistency."
+      },
+      {
+        title: "3. SonarQube Static Quality Gate",
+        tool: "SonarQube SAST & Nexus",
+        purpose: "Scans compiled structures for code smells, credential warnings, and logic bugs, enforcing rigorous assessment quality barriers before publishing.",
+        detail: "Prevents leaking security credentials or introducing server-side regressions."
+      },
+      {
+        title: "4. Blue-Green Deliver / Apache Tomcat",
+        tool: "Tomcat Server Automation",
+        purpose: "Deploys verified, quality-tested bundles dynamically onto application hosts using secure Tomcat blue-green rollout schemes.",
+        detail: "Provides zero-downtime hot-swaps to end-users on traffic shift boundaries."
+      }
+    ];
 
-    const navAs = document.querySelectorAll('.nav-links a');
-    const sio = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          navAs.forEach(a => a.classList.remove('active'));
-          const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-          if (a) a.classList.add('active');
+    // --- PROJECTS SELECTED SPECS DATA ---
+    const projectSpecifications = {
+      "cicd-pipeline": {
+        num: "Project Alpha Scope",
+        title: "CI/CD Pipeline for Application Deployment",
+        desc0: "The challenge was manual packaging cycles and untested builds. Shreyash designed and implemented an end-to-end CI/CD pipeline using Jenkins (Scripted Groovy), integrated with Git webhooks for automated builds, environment setup, artifact cleanup, and notifications via email/Slack.",
+        desc1: "To guarantee reproducibility, containerized the multi-tier application using Docker, managed image versioning patterns, and pushed images cleanly to a secure private registry.",
+        desc2: "Integrated SonarQube (SAST) and Nexus to automatically enforce static analysis security gates, and automated deployment parameters to Apache Tomcat servers using active blue-green delivery strategies.",
+        tags: ["Jenkins (Scripted Groovy)", "Docker Containers", "Maven Build", "SonarQube SAST", "Nexus Registry", "Shell Scripting", "Git Webhooks", "Blue-Green Deployment"]
+      },
+      "high-availability-aws": {
+        num: "Project Beta Scope",
+        title: "Highly Available Web Application on AWS",
+        desc0: "Inconsistent server loads caused latency spikes and down periods on manual host configs. Shreyash designed and deployed a highly resilient 3-tier application architecture across multiple AWS Availability Zones.",
+        desc1: "Configured Auto Scaling Groups (ASG) behind an Application Load Balancer (ALB) to perform dynamic health checks and sticky sessions, preventing single points of failure.",
+        desc2: "Implemented target-tracking auto scaling (50% CPU threshold) using CloudWatch metrics and alarms. Validated robust zero-downtime failovers via intense load-testing simulating over 10,000 concurrent web users, and right-sized on-demand EC2 instances to slash overall infrastructure costs by 30%.",
+        tags: ["AWS EC2", "Auto Scaling groups (ASG)", "Application Load Balancer (ALB)", "CloudWatch Alarms", "Terraform modules", "Multi-AZ Network Model", "Right-Sizing optimization"]
+      },
+      "iac-automation": {
+        num: "Project Gamma Scope",
+        title: "Infrastructure Automation with Terraform & Ansible",
+        desc0: "Provisioned entire virtual AWS environments (VPC, private/public subnets, security groups, EC2, RDS database, S3) dynamically from scratch using modular Infrastructure as Code.",
+        desc1: "Automated configuration orchestration and backend services setups cleanly via Ansible playbooks using dynamic target inventory scripts.",
+        desc2: "Developed robust Bash automation scripts to automatically schedule backups, log rotations, database snapshots, and system health checks, slashing manual setup times by 70%.",
+        tags: ["Terraform modules", "Ansible playbooks", "Dynamic Inventory", "VPC Subnets", "Security Groups", "RDS Database", "S3 Storage Backend", "Bash automation"]
+      }
+    };
+
+    // --- ACTIVE LAYOUT RENDER CONTROLLER ---
+    function initializeActiveComponents() {
+      // Load Default Skills (Cloud category)
+      switchSkillCategory('cloud');
+      // Load Default Projects (cicd-pipeline)
+      switchActiveProject('cicd-pipeline');
+    }
+
+    // Tab Switcher Cloud Systems
+    function switchSkillCategory(catId) {
+      const data = skillCategories[catId];
+      if (!data) return;
+
+      // Reset Selector Button Styles
+      document.querySelectorAll('#skills-tab-headers button').forEach(btn => {
+        btn.className = "skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 text-slate-800 hover:bg-slate-50 dark:bg-slate-950/40 dark:border-slate-855 dark:text-slate-300 dark:hover:bg-slate-900/30";
+      });
+
+      // Highlight Selected Button
+      const activeBtn = document.querySelector(`[data-cat="${catId}"]`);
+      if (activeBtn) {
+        activeBtn.className = "skills-tab-btn active w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer bg-slate-100/80 border-indigo-500 text-slate-955 dark:bg-[#0c1220]/60 dark:border-indigo-500 dark:text-white";
+      }
+
+      // Populate Data Into Panel Cards with delicate transitions
+      const badge = document.getElementById('skills-cat-badge');
+      const title = document.getElementById('skills-cat-title');
+      const desc = document.getElementById('skills-cat-desc');
+      const grid = document.getElementById('skills-items-grid');
+
+      // Update basic fields
+      badge.className = `text-[9px] code-mono font-bold px-3 py-1 rounded-full border ${data.badgeStyle}`;
+      badge.textContent = data.badge;
+      title.textContent = data.title;
+      desc.textContent = data.desc;
+
+      // Map Grid Items
+      grid.innerHTML = "";
+      data.items.forEach(item => {
+        const chip = document.createElement('div');
+        chip.className = "flex items-center gap-3 p-3.5 rounded-xl border bg-slate-50/50 border-slate-150 hover:border-slate-250 dark:bg-[#05080f]/50 dark:border-slate-900/60 dark:hover:border-slate-800 transition-all duration-200 fade-content";
+        chip.innerHTML = `
+          <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="text-xs font-semibold code-mono">${item.name}</span>
+        `;
+        grid.appendChild(chip);
+      });
+    }
+
+    // Step Pipeline Flow Stepper Selector
+    function switchPipelineStage(idx) {
+      const stage = pipelineStages[idx];
+      if (!stage) return;
+
+      // Clear Active Elements on Left Column buttons
+      document.querySelectorAll('.pipeline-btn').forEach((btn, currentIdx) => {
+        const numBadge = btn.querySelector('.pipeline-num-badge');
+        if (currentIdx === idx) {
+          // Highlight
+          btn.className = "pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer bg-slate-100 border-indigo-400 dark:bg-indigo-955/20 dark:border-indigo-500/40 text-slate-950 dark:text-white";
+          if (numBadge) numBadge.className = "pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-indigo-650 text-white";
+        } else {
+          // Reset
+          btn.className = "pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer bg-white border-slate-205 dark:bg-[#070a11]/30 dark:border-slate-900 text-slate-505 hover:bg-slate-50";
+          if (numBadge) numBadge.className = "pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-slate-105 text-slate-500 dark:bg-slate-900 dark:text-slate-405";
         }
       });
-    }, { rootMargin: '-35% 0px -60% 0px' });
-    document.querySelectorAll('section[id]').forEach(s => sio.observe(s));
+
+      // Update right details with quick transition
+      const toolField = document.getElementById('pipeline-tool');
+      const titleField = document.getElementById('pipeline-title');
+      const purposeField = document.getElementById('pipeline-purpose');
+      const detailField = document.getElementById('pipeline-detail');
+
+      toolField.textContent = stage.tool;
+      titleField.textContent = stage.title;
+      purposeField.textContent = stage.purpose;
+      detailField.textContent = stage.detail;
+    }
+
+    // Advanced Projects Switch Logic
+    function switchActiveProject(projId) {
+      const spec = projectSpecifications[projId];
+      if (!spec) return;
+
+      // Update Active tab buttons layout styling
+      document.querySelectorAll('.project-tab-btn').forEach(btn => {
+        const currentId = btn.getAttribute('data-pid');
+        if (currentId === projId) {
+          btn.className = "project-tab-btn active w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-slate-105/80 border-indigo-500 dark:bg-indigo-950/20 dark:border-indigo-554/30 text-slate-950 dark:text-white shadow-sm";
+        } else {
+          btn.className = "project-tab-btn w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 hover:bg-slate-55 dark:bg-[#070a11]/40 dark:border-slate-900 dark:hover:bg-slate-900/30 text-slate-505 dark:text-slate-300";
+        }
+      });
+
+      // Populate right specifications details
+      document.getElementById('proj-card-num-badge').textContent = spec.num;
+      document.getElementById('proj-card-title').textContent = spec.title;
+      document.getElementById('proj-card-desc-0').textContent = spec.desc0;
+      document.getElementById('proj-card-desc-1').textContent = spec.desc1;
+      document.getElementById('proj-card-desc-2').textContent = spec.desc2;
+
+      // Populate Tags Grid
+      const tagsGrid = document.getElementById('proj-card-tags-grid');
+      tagsGrid.innerHTML = "";
+      spec.tags.forEach(tag => {
+        const chip = document.createElement('span');
+        chip.className = "text-[10px] code-mono font-bold px-2.5 py-1 rounded-lg border bg-indigo-50 border-indigo-100 text-indigo-700 dark:bg-slate-950 dark:border-slate-850 dark:text-indigo-400";
+        chip.textContent = tag;
+        tagsGrid.appendChild(chip);
+      });
+    }
+
+    // --- GENERAL THEME TOGGLE (DARK VS LIGHT SYNCHRONIZATION) ---
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('portfolio-theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('portfolio-theme', 'dark');
+      }
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    }
+
+    // Direct Copy to Clipboard Helper
+    function handleClipboardCopy(text, typeId) {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById(`copy-${typeId}-btn`);
+        if (btn) {
+          const original = btn.textContent;
+          btn.textContent = "Copied!";
+          btn.className = "text-[9.5px]/none code-mono bg-emerald-600 text-white font-bold px-2.5 py-1 rounded-xl cursor-default transition-all";
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.className = "text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-655 text-white font-semibold px-2.5 py-1 rounded-xl cursor-pointer transition-all";
+          }, 2000);
+        }
+      });
+    }
+
+    // Form Redirection System (Mailto client dispatch)
+    // Handle Inquiry Submit Form Handler
+    function handleInquirySubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('form-name').value.trim();
+      const company = document.getElementById('form-company').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
+      const message = document.getElementById('form-message').value.trim();
+
+      if (!subject || !message) return;
+
+      const headerSubject = subject ? subject : `Inquiry — Shreyash Sutar Portfolio`;
+      const structuredBody = `Hi Shreyash,
+
+${message}
+
+Best Regards,
+${name ? name : "Visitor"} ${company ? `(${company})` : ""}
+`;
+
+      const mailtoUrl = `mailto:shreyashsutar40@gmail.com?subject=${encodeURIComponent(headerSubject)}&body=${encodeURIComponent(structuredBody)}`;
+      
+      // Update warning status alert
+      const successAlert = document.getElementById('form-success-alert');
+      successAlert.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 800);
+
+      setTimeout(() => {
+        successAlert.classList.add('hidden');
+        document.getElementById('form-name').value = "";
+        document.getElementById('form-company').value = "";
+        document.getElementById('form-subject').value = "";
+        document.getElementById('form-message').value = "";
+      }, 4500);
+    }
+
+    // --- INSTANT HIGH-FIDELITY OFFLINE CV WRITER (Markdown file generation) ---
+    function handleDownloadCV() {
+      const markdownCV = `# RESUME — SHREYASH SUTAR
+DevOps Engineer | Cloud Engineer
+Contact Focus: +91 84858 98732 | E-Mail: shreyashsutar40@gmail.com
+Location: Pune, India | LinkedIn: linkedin.com/in/shreyash-sutar | GitHub: github.com/shreyash-sutar-04
+
+---
+
+## PROFESSIONAL SUMMARY
+Final-year Computer Engineering student with hands-on experience designing and deploying CI/CD pipelines, provisioning AWS infrastructure (EC2, S3, VPC, ALB, ASG, Lambda), and automating deployments using Jenkins, Docker, Terraform, and Linux. Proven expertise in infrastructure automation, containerization, and system reliability engineering with a focus on scalable, highly available cloud architectures.
+
+## TECHNICAL SKILLS
+- **Cloud Platforms**: AWS (EC2, S3, VPC, IAM, Lambda, SNS, CloudWatch, RDS, DynamoDB, CloudFront, Auto Scaling, Route 53)
+- **Operating Systems**: Ubuntu, Amazon Linux, CentOS
+- **Web & Application Servers**: Nginx, Apache, Tomcat
+- **Version Control & Repository**: Git, GitHub
+- **Programming Languages**: Python (automation, scripting, boto3)
+- **CI/CD & Automation**: Jenkins (Scripted & Declarative), GitLab CI, Shell Scripting
+- **Containerization & Orchestration**: Docker (build, push, run, Compose), Kubernetes (Pod deployment, services, ConfigMaps)
+- **Infrastructure as Code**: Terraform (modules, state management), Ansible (playbooks, configuration management)
+- **Monitoring & Logging**: CloudWatch, Basic log aggregation
+
+## PROJECTS SHOWCASE
+1. **CI/CD Pipeline for Application Deployment**
+   - *Toolsets*: Jenkins, Docker, Maven, SonarQube, Nexus, Shell Scripting, Git
+   - Designed and implemented end-to-end CI/CD pipeline using Jenkins (Scripted Groovy), integrated with Git webhooks for automated builds, environment setup, artifact cleanup, and notifications via email/Slack.
+   - Containerized multi-tier application using Docker, managed image versioning, and pushed to a secure private registry.
+   - Integrated SonarQube (SAST) and Nexus, enforced quality gates, and automated deployments to Apache Tomcat using an advanced blue-green strategy.
+
+2. **Highly Available Web Application on AWS**
+   - *Toolsets*: AWS EC2, ASG, ALB, CloudWatch, Terraform
+   - Designed and deployed a highly available 3-tier architecture across multiple AWS Availability Zones using Auto Scaling Groups and Application Load Balancer (health checks, sticky sessions).
+   - Implemented target-tracking auto scaling (50% CPU threshold) using CloudWatch metrics and alarms; validated zero-downtime failover via rigorous load testing simulating 10,000 concurrent users.
+   - Optimized overall infrastructure costs by 30% through right-sizing techniques and efficient on-demand instances utilization.
+
+3. **Infrastructure Automation with Terraform & Ansible**
+   - *Toolsets*: Terraform, Ansible, AWS, Bash, Git
+   - Provisioned full-tier AWS infrastructure using Terraform (VPC, subnets, EC2, RDS, S3, Security Groups) with modular code structures and remote state management (S3 backend).
+   - Automated configuration and orchestration workflows using Ansible playbooks with dynamic inventory for server setup and service management.
+   - Developed custom Bash automation scripts for log rotation, weekly backups, database snapshots, and health monitoring, resulting in a 70% reduction in manual setup times.
+
+## CERTIFICATIONS
+- **AWS Certified Cloud Practitioner** — Udemy Cloud Coursework
+- **Python with AWS and Boto3** — Udemy API Integration Coursework
+- **Jenkins CI/CD & Docker for DevOps** — Ongoing Self-Study
+- **TCS iON Career Edge – Young Professional** — TCS professional standards verification
+
+## EDUCATION Track
+- **B.Tech in Computer Engineering** | Sanjay Bhokre Group of Institutes, Miraj (Ongoing Batch) — SGPA: 7.2 | 2022 – 2026
+- **Higher Secondary Education (HSC)** | Modern Junior College, Shivajinagar, Pune — 54% | 2022
+- **Secondary School Certificate (SSC)** | New English School, Bhosari — 90.40% | 2020
+`;
+
+      const blob = new Blob([markdownCV], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const hostElement = document.createElement('a');
+      hostElement.href = url;
+      hostElement.download = "Resume-Shreyash-Sutar.md";
+      document.body.appendChild(hostElement);
+      hostElement.click();
+      document.body.removeChild(hostElement);
+      URL.revokeObjectURL(url);
+    }
+
+    // Run layout initializer on load
+    window.addEventListener('DOMContentLoaded', initializeActiveComponents);
   </script>
 </body>
 </html>
