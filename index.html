@@ -183,10 +183,10 @@
   <main class="max-w-6xl mx-auto px-6 py-12 lg:py-20 relative z-10 space-y-24 lg:space-y-36">
 
     <!-- HERO PROFILE GREETING -->
-    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="about" class="flex flex-col items-center justify-center text-center py-10 lg:py-16">
       
-      <!-- Copy Details Left -->
-      <div class="lg:col-span-7 space-y-8">
+      <!-- Copy Details Centered -->
+      <div class="w-full max-w-4xl space-y-8 flex flex-col items-center justify-center">
         <div class="space-y-4">
           
           <!-- State Alert Badge -->
@@ -204,13 +204,13 @@
           </h1>
           
           <!-- Professional Summary -->
-          <p class="text-base sm:text-lg leading-relaxed max-w-2xl font-normal text-slate-600 dark:text-slate-300">
+          <p class="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal text-slate-600 dark:text-slate-300">
             I am Shreyash Sutar, a final-year Computer Engineering student with hands-on experience designing and deploying CI/CD pipelines, provisioning AWS infrastructure (EC2, S3, VPC, ALB, Auto Scaling, Lambda), and automating operations using Jenkins, Docker, Terraform, Ansible, and Shell/Python scripting.
           </p>
         </div>
 
         <!-- Toolchain High-Level Badge Arrays -->
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 justify-center">
           <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             📍 Pune / Miraj, India
           </span>
@@ -220,8 +220,10 @@
           <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             🛠️ Infrastructure as Code
           </span>
-          <!-- Social Action Buttons -->
-        <div class="flex flex-wrap gap-3 items-center">
+        </div>
+
+        <!-- Social Action Buttons -->
+        <div class="flex flex-wrap gap-3 items-center justify-center pt-2">
           <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-indigo-900/10">
             Inquire Setup
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -245,53 +247,6 @@
           </a>
         </div>
 
-      </div>
-
-      <!-- Compact Metrical Brand Card -->
-      <div class="lg:col-span-5 flex justify-center">
-        <div class="relative w-full max-w-[310px] aspect-square rounded-[2rem] p-[2px] bg-gradient-to-tr from-indigo-500 via-sky-400 to-pink-500 shadow-xl transition-all duration-300 hover:scale-[1.01]">
-          <div class="w-full h-full rounded-[1.9rem] p-6 flex flex-col justify-between overflow-hidden relative bg-white dark:bg-[#0b0f19]">
-            
-            <div class="absolute -right-10 -top-10 w-28 h-28 rounded-full bg-indigo-500/10 filter blur-xl"></div>
-            <div class="absolute -left-10 -bottom-10 w-28 h-28 rounded-full bg-pink-500/10 filter blur-xl"></div>
-
-            <div class="flex justify-between items-center z-10">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-                <span class="text-[10px] code-mono tracking-widest uppercase font-bold text-slate-450 dark:text-slate-400">
-                  SYSTEM CORE
-                </span>
-              </div>
-              <svg class="w-4 h-4 text-indigo-400 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-
-            <div class="my-3 flex justify-center items-center z-10">
-              <div class="relative">
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full blur opacity-20 animate-pulse"></div>
-                <div class="relative w-24 h-24 rounded-full flex flex-col items-center justify-center font-extrabold text-3xl border bg-slate-50 border-slate-205 text-slate-950 dark:bg-slate-900/60 dark:border-slate-800 dark:text-white heading-display">
-                  SS
-                  <span class="text-[9px] code-mono tracking-wider uppercase font-bold text-indigo-500 dark:text-indigo-400 mt-1 block">
-                    B.Tech
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-1.5 z-10 pt-3 border-t border-slate-200/50 dark:border-slate-800/60 text-xs text-slate-500 dark:text-slate-400">
-              <div class="flex items-center justify-between">
-                <span>Deploy Run:</span>
-                <span class="font-bold text-indigo-600 dark:text-indigo-400 code-mono">GitHub / Jenkins</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span>State Engine:</span>
-                <span class="font-bold text-sky-600 dark:text-sky-400 code-mono">Declarative Parity</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
 
     </section>
