@@ -82,7 +82,7 @@
 </head>
 <body class="bg-[#fcfcff] text-slate-950 dark:bg-[#090d16] dark:text-[#f1f5f9] min-h-screen transition-colors duration-500 selection:bg-indigo-500 selection:text-white antialiased">
   
-  <!-- BACKGROUND DECORATIONS -->
+  <!-- BACKGROUND DECORATIONS (GLOW EFFECTS) -->
   <div class="absolute top-0 left-0 w-full h-[800px] overflow-hidden pointer-events-none z-0">
     <div class="absolute top-[-200px] left-[5%] w-[600px] h-[600px] rounded-full gradient-blur opacity-20 dark:opacity-25 bg-indigo-500 dark:bg-indigo-900/30 transition-colors duration-500"></div>
     <div class="absolute top-[150px] right-[-100px] w-[500px] h-[500px] rounded-full gradient-blur opacity-15 dark:opacity-20 bg-sky-400 dark:bg-sky-900/20 transition-colors duration-500"></div>
@@ -117,7 +117,8 @@
       <div class="flex items-center gap-2.5">
         
         <!-- Toggle Theme Button -->
-        <button onclick="toggleTheme()" aria-label="Switch interface contrast theme" class="p-2.5 rounded-xl border transition-all cursor-pointer bg-slate-100 border-slate-200 text-slate-707 hover:bg-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-amber-400 dark:hover:bg-slate-800">
+        <button onclick="toggleTheme()" aria-label="Switch interface contrast theme" class="p-2.5 rounded-xl border transition-all cursor-pointer bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-amber-400 dark:hover:bg-slate-800">
+          <!-- Light Theme Sun Icon -->
           <svg id="sun-icon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -129,20 +130,21 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg id="moon-icon" class="w-4 h-4 block dark:hidden text-slate-707" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <!-- Dark Theme Moon Icon -->
+          <svg id="moon-icon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
 
         <!-- Direct Resume Download File Button -->
-        <button onclick="handleDownloadCV()" class="hidden sm:flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl cursor-pointer shadow-md bg-slate-900 hover:bg-slate-800 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-indigo-950/10">
+        <a href="resume.pdf" download="Resume-Shreyash-Sutar.pdf" class="hidden sm:flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl cursor-pointer shadow-md bg-slate-900 hover:bg-slate-800 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-indigo-950/10">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <a href="resume.pdf" download="Resume-Shreyash-Sutar.pdf">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
           Download CV
-        </button>
+        </a>
 
         <!-- Mobile Drawer Menu Toggle -->
         <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border bg-slate-100 border-slate-200 text-slate-800 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 cursor-pointer">
@@ -165,14 +167,14 @@
         <a href="#experience" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Background Track</a>
         <a href="#accreditations" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Achievements</a>
         <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Contact</a>
-        <button onclick="handleDownloadCV(); toggleMobileMenu()" class="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-500 text-white transition-all text-center">
+        <a href="resume.pdf" download="Resume-Shreyash-Sutar.pdf" onclick="toggleMobileMenu()" class="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-500 text-white transition-all text-center">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <a href="resume.pdf" download="Resume-Shreyash-Sutar.pdf">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
           Download Resume File
-        </button>
+        </a>
       </div>
     </div>
   </header>
@@ -201,28 +203,26 @@
             Automating Cloud Delivery with <span class="bg-gradient-to-r from-indigo-500 via-sky-500 to-pink-500 bg-clip-text text-transparent">Declarative Parity</span>.
           </h1>
           
-          <!-- Summary -->
+          <!-- Professional Summary -->
           <p class="text-base sm:text-lg leading-relaxed max-w-2xl font-normal text-slate-600 dark:text-slate-300">
             I am Shreyash Sutar, a final-year Computer Engineering student with hands-on experience designing and deploying CI/CD pipelines, provisioning AWS infrastructure (EC2, S3, VPC, ALB, Auto Scaling, Lambda), and automating operations using Jenkins, Docker, Terraform, Ansible, and Shell/Python scripting.
           </p>
         </div>
 
-        <!-- Toolchain High-Level badge Arrays -->
+        <!-- Toolchain High-Level Badge Arrays -->
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-707 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             📍 Pune / Miraj, India
           </span>
-          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-707 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             ☁️ AWS Academy Foundations
           </span>
-          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-707 dark:border-slate-800 dark:bg-slate-900/95 dark:text-slate-300">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             🛠️ Infrastructure as Code
           </span>
-        </div>
-
-        <!-- Social Action Buttons -->
+          <!-- Social Action Buttons -->
         <div class="flex flex-wrap gap-3 items-center">
-          <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-indigo-950/10">
+          <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-indigo-900/10">
             Inquire Setup
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -270,7 +270,12 @@
             <div class="my-3 flex justify-center items-center z-10">
               <div class="relative">
                 <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full blur opacity-20 animate-pulse"></div>
-                <img src="/src/assets/images/logo.jpg" alt="Shreyash Sutar" referrerPolicy="no-referrer" class="relative w-24 h-24 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-md" />
+                <div class="relative w-24 h-24 rounded-full flex flex-col items-center justify-center font-extrabold text-3xl border bg-slate-50 border-slate-205 text-slate-950 dark:bg-slate-900/60 dark:border-slate-800 dark:text-white heading-display">
+                  SS
+                  <span class="text-[9px] code-mono tracking-wider uppercase font-bold text-indigo-500 dark:text-indigo-400 mt-1 block">
+                    B.Tech
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -311,35 +316,35 @@
           <button onclick="switchSkillCategory('cloud')" class="skills-tab-btn active w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="cloud">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">Cloud Platforms</span>
-              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('containers')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="containers">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">Containerisation &amp; Orchestration</span>
-              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('iac')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="iac">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">Infrastructure as Code</span>
-              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('cicd')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="cicd">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">CI/CD &amp; Version Control</span>
-              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('sys')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="sys">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">OS &amp; Application Servers</span>
-              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
@@ -366,14 +371,14 @@
 
             <!-- Detailed Grid Items -->
             <div id="skills-items-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 mt-6 border-t border-slate-200/50 dark:border-slate-800/60">
-              <!-- Dynamically populated by JavaScript -->
+              <!-- Dynamically populated by JS below -->
             </div>
 
           </div>
         </div>
 
       </div>
-    </section>
+      </section>
 
     <!-- PROJECTS PORTFOLIO TAB AREA -->
     <section id="projects" class="space-y-8">
@@ -441,7 +446,7 @@
             
             <div class="space-y-6">
               <div class="flex justify-between items-center border-b border-slate-200/20 pb-3">
-                <span id="proj-card-num-badge" class="text-[9px] code-mono font-bold px-3 py-1 rounded-full border bg-indigo-500/10 text-indigo-650 border-indigo-550/20 dark:text-indigo-400">
+                <span id="proj-card-num-badge" class="text-[9px] code-mono font-bold px-3 py-1 rounded-full border bg-indigo-500/10 text-indigo-600 border-indigo-500/20 dark:text-indigo-400">
                   Project Detail Scope
                 </span>
                 
@@ -471,7 +476,7 @@
                     2. Core Containerization / Docker Image registries
                   </span>
                   <p id="proj-card-desc-1" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                    Containerized multi-tier application using Docker, managed image versioning patterns, and pushed images cleanly to a secure private registry.
+                    Containerized multi-tier application using Docker, managed image versioning, and pushed to a private registry.
                   </p>
                 </div>
 
@@ -480,7 +485,7 @@
                     3. Security Analysis Gates / SonarQube &amp; Tomcat blue-green
                   </span>
                   <p id="proj-card-desc-2" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                    Integrated SonarQube (SAST) and Nexus to automatically enforce static analysis security gates, and automated deployment parameters to Apache Tomcat servers using active blue-green delivery strategies.
+                    Integrated SonarQube (SAST) and Nexus, enforced quality gates, and automated deployments to Apache Tomcat using a blue-green strategy.
                   </p>
                 </div>
               </div>
@@ -501,9 +506,7 @@
         </div>
 
       </div>
-    </section>
-
-    <!-- SCHOLASTIC MILESTONES -->
+      <!-- SCHOLASTIC MILESTONES -->
     <section id="experience" class="max-w-3xl mx-auto space-y-8">
       
       <!-- Academic Milestones Timeline (Centered) -->
@@ -664,14 +667,12 @@
           <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-800/60 text-[10px] code-mono font-bold">
             <span class="text-slate-455">ID STATE:</span>
             <span class="px-2.5 py-0.5 rounded-full border bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-extrabold uppercase text-[9px]">
-               Completed
+              Completed
             </span>
           </div>
         </div>
 
       </div>
-    </section>
-
     <!-- DIRECT ENGAGEMENT CONTACT SYSTEM -->
     <section id="contact" class="max-w-2xl mx-auto space-y-8">
       
@@ -752,7 +753,7 @@
         </p>
       </div>
 
-      <div class="flex items-center gap-4 text-[10px] code-mono font-bold text-slate-505 dark:text-slate-455 tracking-wider uppercase">
+      <div class="flex items-center gap-4 text-[10px] code-mono font-bold text-slate-500 dark:text-slate-455 tracking-wider uppercase">
         <span>AWS Cloud Practitioner</span>
         <span>&#183;</span>
         <span>100% Declarative Parity</span>
@@ -840,6 +841,34 @@
       }
     };
 
+    // --- PIPELINE COMPONENT STATE CONFIGURATION ---
+    const pipelineStages = [
+      {
+        title: "1. Code Push & Webhook Trigger",
+        tool: "Jenkins / Git Hooks",
+        purpose: "Developer commits script/code updates to the repository, instantly prompting Jenkins scripted pipeline workflows through automated webhooks.",
+        detail: "Ensures all integration stages kick off cleanly with zero manual operator delay."
+      },
+      {
+        title: "2. Container Compile & Push",
+        tool: "Docker Runtime / Registry",
+        purpose: "Multi-tier applications compile automatically into highly isolated, clean Docker images tagged with explicit package version layers.",
+        detail: "Pushed reliably into private asset registries, locking release consistency."
+      },
+      {
+        title: "3. SonarQube Static Quality Gate",
+        tool: "SonarQube SAST & Nexus",
+        purpose: "Scans compiled structures for code smells, credential warnings, and logic bugs, enforcing rigorous assessment quality barriers before publishing.",
+        detail: "Prevents leaking security parameters or introducing server-side regressions."
+      },
+      {
+        title: "4. Blue-Green Deliver / Apache Tomcat",
+        tool: "Tomcat Server Automation",
+        purpose: "Deploys verified, quality-tested bundles dynamically onto application hosts using secure Tomcat blue-green rollout schemes.",
+        detail: "Provides zero-downtime hot-swaps to end-users on traffic shift boundaries."
+      }
+    ];
+
     // --- PROJECTS SELECTED SPECS DATA ---
     const projectSpecifications = {
       "cicd-pipeline": {
@@ -917,6 +946,37 @@
       });
     }
 
+    // Step Pipeline Flow Stepper Selector
+    function switchPipelineStage(idx) {
+      const stage = pipelineStages[idx];
+      if (!stage) return;
+
+      // Clear Active Elements on Left Column buttons
+      document.querySelectorAll('.pipeline-btn').forEach((btn, currentIdx) => {
+        const numBadge = btn.querySelector('.pipeline-num-badge');
+        if (currentIdx === idx) {
+          // Highlight
+          btn.className = "pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer bg-slate-100 border-indigo-400 dark:bg-indigo-950/20 dark:border-indigo-500/40 text-slate-950 dark:text-white";
+          if (numBadge) numBadge.className = "pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-indigo-650 text-white";
+        } else {
+          // Reset
+          btn.className = "pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer bg-white border-slate-205 dark:bg-[#070a11]/30 dark:border-slate-900 text-slate-500 hover:bg-slate-50";
+          if (numBadge) numBadge.className = "pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-slate-100 text-slate-500 dark:bg-slate-900 dark:text-slate-400";
+        }
+      });
+
+      // Update right details with quick transition
+      const toolField = document.getElementById('pipeline-tool');
+      const titleField = document.getElementById('pipeline-title');
+      const purposeField = document.getElementById('pipeline-purpose');
+      const detailField = document.getElementById('pipeline-detail');
+
+      toolField.textContent = stage.tool;
+      titleField.textContent = stage.title;
+      purposeField.textContent = stage.purpose;
+      detailField.textContent = stage.detail;
+    }
+
     // Advanced Projects Switch Logic
     function switchActiveProject(projId) {
       const spec = projectSpecifications[projId];
@@ -926,7 +986,7 @@
       document.querySelectorAll('.project-tab-btn').forEach(btn => {
         const currentId = btn.getAttribute('data-pid');
         if (currentId === projId) {
-          btn.className = "project-tab-btn active w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-slate-100/80 border-indigo-500 dark:bg-indigo-950/20 dark:border-indigo-555/30 text-slate-950 dark:text-white shadow-sm";
+          btn.className = "project-tab-btn active w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-slate-100/80 border-indigo-500 dark:bg-indigo-950/20 dark:border-indigo-550/30 text-slate-950 dark:text-white shadow-sm";
         } else {
           btn.className = "project-tab-btn w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 hover:bg-slate-50 dark:bg-[#070a11]/40 dark:border-slate-900 dark:hover:bg-slate-900/30 text-slate-500 dark:text-slate-305";
         }
@@ -963,6 +1023,7 @@
     }
 
     // Mobile Navigation Toggle
+    // Mobile Drawer Close Function
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       if (menu.classList.contains('hidden')) {
@@ -988,12 +1049,51 @@
       });
     }
 
+    // Form Redirection System (Mailto client dispatch)
+    function handleInquirySubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('form-name').value.trim();
+      const company = document.getElementById('form-company').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
+      const message = document.getElementById('form-message').value.trim();
+
+      if (!subject || !message) return;
+
+      const headerSubject = subject ? subject : `Inquiry — Shreyash Sutar Portfolio`;
+      const structuredBody = `Hi Shreyash,
+
+${message}
+
+Best Regards,
+${name ? name : "Visitor"} ${company ? `(${company})` : ""}
+`;
+
+      const mailtoUrl = `mailto:shreyashsutar40@gmail.com?subject=${encodeURIComponent(headerSubject)}&body=${encodeURIComponent(structuredBody)}`;
+      
+      // Update warning status alert
+      const successAlert = document.getElementById('form-success-alert');
+      successAlert.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 800);
+
+      setTimeout(() => {
+        successAlert.classList.add('hidden');
+        document.getElementById('form-name').value = "";
+        document.getElementById('form-company').value = "";
+        document.getElementById('form-subject').value = "";
+        document.getElementById('form-message').value = "";
+      }, 4500);
+    }
+
     // --- INSTANT HIGH-FIDELITY OFFLINE CV WRITER (Markdown file generation) ---
     function handleDownloadCV() {
       const markdownCV = `# RESUME — SHREYASH SUTAR
 DevOps Engineer | Cloud Engineer
 Contact Focus: +91 84858 98732 | E-Mail: shreyashsutar40@gmail.com
-Location: Pune, India | LinkedIn: linkedin.com/in/shreyash-sutar-2333b5259 | GitHub: github.com/shreyash-sutar-04
+Location: Pune, India | LinkedIn: linkedin.com/in/shreyash-sutar | GitHub: github.com/shreyash-sutar-04
 
 ---
 
