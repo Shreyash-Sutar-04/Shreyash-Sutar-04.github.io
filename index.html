@@ -1,1 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyash Sutar - DevOps & SRE Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 120px;
+            z-index: 99;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-content {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Projects */
+        .project {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 1rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin: 0 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: slideIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Shreyash Sutar</h1>
+            <p>DevOps Engineer | Site Reliability Engineer | QSpiders Graduate</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="container">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    Hi! I'm Shreyash Sutar, a passionate DevOps Engineer and aspiring Site Reliability Engineer 
+                    based in Pune, Maharashtra, India. I'm currently pursuing an intensive DevOps course at QSpiders, 
+                    Wakad, where I'm building a strong foundation in modern cloud technologies and SRE practices.
+                </p>
+                <p style="margin-top: 1rem;">
+                    I have a strong passion for technology and a genuine interest in building reliable, scalable systems. 
+                    I'm eager to contribute to CME Group's mission of maintaining ultra-reliable trading platforms while 
+                    continuously learning and growing in the field of Site Reliability Engineering.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>Bash/Shell</li>
+                        <li>Java (Learning)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Cloud Platforms</h4>
+                    <ul>
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Amazon Web Services (AWS)</li>
+                        <li>Azure Basics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Containerization</h4>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Kubernetes (K8s)</li>
+                        <li>Container Orchestration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Infrastructure</h4>
+                    <ul>
+                        <li>Terraform</li>
+                        <li>Ansible</li>
+                        <li>Infrastructure as Code</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Monitoring & Observability</h4>
+                    <ul>
+                        <li>Prometheus</li>
+                        <li>Grafana</li>
+                        <li>ELK Stack</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>CI/CD & DevOps</h4>
+                    <ul>
+                        <li>Jenkins</li>
+                        <li>GitLab CI</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Operating Systems</h4>
+                    <ul>
+                        <li>Linux Administration</li>
+                        <li>System Configuration</li>
+                        <li>Networking (TCP/IP)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>SRE Practices</h4>
+                    <ul>
+                        <li>System Reliability</li>
+                        <li>Incident Response</li>
+                        <li>Troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects & Experience</h2>
+
+            <div class="project">
+                <h3>DevOps Course - QSpiders, Wakad</h3>
+                <p>
+                    <strong>Duration:</strong> January 2025 - Present<br>
+                    <strong>Location:</strong> Wakad, Pune
+                </p>
+                <p>
+                    Pursuing intensive DevOps engineering course with strong focus on Site Reliability Engineering. 
+                    Developing foundational programming and scripting skills in Python and Bash, proficiency in 
+                    Linux-based systems administration, and hands-on experience with containerization (Docker, Kubernetes).
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Bash</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">GCP</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Linux System Administration Project</h3>
+                <p>
+                    Hands-on project focusing on Linux system administration, configuration management, 
+                    and troubleshooting. Practiced setting up services, managing users, and implementing 
+                    security best practices.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Linux</span>
+                    <span class="tech-tag">Bash</span>
+                    <span class="tech-tag">Networking</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Docker Containerization Practice</h3>
+                <p>
+                    Created Dockerfiles and docker-compose configurations for multi-tier applications. 
+                    Learned container best practices, image optimization, and orchestration basics.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Docker Compose</span>
+                    <span class="tech-tag">Container Security</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Kubernetes Manifest Learning</h3>
+                <p>
+                    Studied and practiced creating Kubernetes deployment manifests, service configurations, 
+                    and scaling policies. Understanding cluster management and pod orchestration.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">YAML</span>
+                    <span class="tech-tag">Container Orchestration</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Monitoring Stack Setup</h3>
+                <p>
+                    Hands-on experience setting up monitoring infrastructure with Prometheus for metrics collection 
+                    and Grafana for visualization. Learning about alerting rules and performance metrics.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Prometheus</span>
+                    <span class="tech-tag">Grafana</span>
+                    <span class="tech-tag">Monitoring</span>
+                    <span class="tech-tag">Alerting</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications & Learning</h2>
+            <ul style="list-style: none;">
+                <li style="padding: 0.5rem 0; color: #555;">
+                    ✓ <strong>DevOps Course</strong> - QSpiders Institute, Wakad (In Progress)
+                </li>
+                <li style="padding: 0.5rem 0; color: #555;">
+                    ✓ <strong>Linux Administration Fundamentals</strong> (Completed)
+                </li>
+                <li style="padding: 0.5rem 0; color: #555;">
+                    ✓ <strong>Docker & Container Technologies</strong> (Completed)
+                </li>
+                <li style="padding: 0.5rem 0; color: #555;">
+                    ✓ <strong>Kubernetes Basics</strong> (In Progress)
+                </li>
+                <li style="padding: 0.5rem 0; color: #555;">
+                    ✓ <strong>Cloud Platforms (GCP, AWS)</strong> (In Progress)
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <a href="mailto:your.email@gmail.com">your.email@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h4>GitHub</h4>
+                    <a href="https://github.com/shreyash-sutar-04" target="_blank">github.com/shreyash-sutar-04</a>
+                </div>
+                <div class="contact-item">
+                    <h4>LinkedIn</h4>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>Pune, Maharashtra, India</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shreyash Sutar. All rights reserved. | DevOps Engineer | SRE Enthusiast</p>
+    </footer>
+</body>
+</html>
