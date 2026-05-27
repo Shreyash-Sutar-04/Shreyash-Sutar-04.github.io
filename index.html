@@ -82,7 +82,7 @@
 </head>
 <body class="bg-[#fcfcff] text-slate-950 dark:bg-[#090d16] dark:text-[#f1f5f9] min-h-screen transition-colors duration-500 selection:bg-indigo-500 selection:text-white antialiased">
   
-  <!-- BACKGROUND DECORATIONS (GLOW EFFECTS) -->
+  <!-- BACKGROUND DECORATIONS -->
   <div class="absolute top-0 left-0 w-full h-[800px] overflow-hidden pointer-events-none z-0">
     <div class="absolute top-[-200px] left-[5%] w-[600px] h-[600px] rounded-full gradient-blur opacity-20 dark:opacity-25 bg-indigo-500 dark:bg-indigo-900/30 transition-colors duration-500"></div>
     <div class="absolute top-[150px] right-[-100px] w-[500px] h-[500px] rounded-full gradient-blur opacity-15 dark:opacity-20 bg-sky-400 dark:bg-sky-900/20 transition-colors duration-500"></div>
@@ -94,9 +94,7 @@
       
       <!-- Brand Logo / Wordmark -->
       <a href="#about" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-sm tracking-tight transition-all duration-300 transform group-hover:scale-105 shadow-md bg-gradient-to-tr from-indigo-650 to-indigo-500 text-white shadow-indigo-900/10 dark:shadow-indigo-950/40">
-          SS
-        </div>
+        <img src="/src/assets/images/shreyash_sutar_1779896844623.png" alt="Shreyash Sutar" referrerPolicy="no-referrer" class="w-10 h-10 rounded-xl object-cover transition-all duration-300 transform group-hover:scale-105 shadow-md border border-slate-200 dark:border-slate-800" />
         <div>
           <span class="font-extrabold text-sm tracking-tight block heading-display text-slate-900 dark:text-white">Shreyash Sutar</span>
           <span class="text-[10px] code-mono tracking-wider uppercase font-bold block text-indigo-600 dark:text-indigo-400">
@@ -107,21 +105,19 @@
 
       <!-- Navigation links (Desktop) -->
       <nav class="hidden md:flex items-center gap-6 text-xs font-bold tracking-wide text-slate-600 dark:text-slate-300">
-        <a href="#about" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">About</a>
-        <a href="#skills" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Skills</a>
-        <a href="#pipeline" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Pipline</a>
-        <a href="#projects" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Projects</a>
-        <a href="#experience" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Experience</a>
-        <a href="#accreditations" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Credentials</a>
-        <a href="#contact" class="hover:text-indigo-650 dark:hover:text-indigo-455 transition-colors">Contact</a>
+        <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
+        <a href="#accreditations" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Credentials</a>
+        <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
       </nav>
 
       <!-- Interactive Actions -->
       <div class="flex items-center gap-2.5">
         
         <!-- Toggle Theme Button -->
-        <button onclick="toggleTheme()" aria-label="Switch interface contrast theme" class="p-2.5 rounded-xl border transition-all cursor-pointer bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-amber-400 dark:hover:bg-slate-800">
-          <!-- Light Theme Sun Icon -->
+        <button onclick="toggleTheme()" aria-label="Switch interface contrast theme" class="p-2.5 rounded-xl border transition-all cursor-pointer bg-slate-100 border-slate-200 text-slate-707 hover:bg-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-amber-400 dark:hover:bg-slate-800">
           <svg id="sun-icon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -133,14 +129,13 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <!-- Dark Theme Moon Icon -->
-          <svg id="moon-icon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg id="moon-icon" class="w-4 h-4 block dark:hidden text-slate-707" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
 
         <!-- Direct Resume Download File Button -->
-        <button onclick="handleDownloadCV()" class="hidden sm:flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl cursor-pointer shadow-md bg-slate-900 hover:bg-slate-800 text-white dark:bg-indigo-650 dark:hover:bg-indigo-600 transition-all shadow-indigo-950/10">
+        <button onclick="handleDownloadCV()" class="hidden sm:flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl cursor-pointer shadow-md bg-slate-900 hover:bg-slate-800 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-indigo-950/10">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -166,12 +161,11 @@
       <div class="px-6 py-6 space-y-4 text-xs font-bold tracking-wide flex flex-col text-slate-600 dark:text-slate-300">
         <a href="#about" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">About</a>
         <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Skills</a>
-        <a href="#pipeline" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">CI/CD Pipeline</a>
         <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Projects</a>
         <a href="#experience" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Background Track</a>
         <a href="#accreditations" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Achievements</a>
         <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-indigo-500 py-1">Contact</a>
-        <button onclick="handleDownloadCV(); toggleMobileMenu()" class="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-550 text-white transition-all text-center">
+        <button onclick="handleDownloadCV(); toggleMobileMenu()" class="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-500 text-white transition-all text-center">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -199,7 +193,7 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
-            Available for Internships &amp; Associate Roles
+            Available for Job Opportunities
           </div>
 
           <!-- Hero Heading -->
@@ -207,28 +201,28 @@
             Automating Cloud Delivery with <span class="bg-gradient-to-r from-indigo-500 via-sky-500 to-pink-500 bg-clip-text text-transparent">Declarative Parity</span>.
           </h1>
           
-          <!-- Professional Summary -->
+          <!-- Summary -->
           <p class="text-base sm:text-lg leading-relaxed max-w-2xl font-normal text-slate-600 dark:text-slate-300">
             I am Shreyash Sutar, a final-year Computer Engineering student with hands-on experience designing and deploying CI/CD pipelines, provisioning AWS infrastructure (EC2, S3, VPC, ALB, Auto Scaling, Lambda), and automating operations using Jenkins, Docker, Terraform, Ansible, and Shell/Python scripting.
           </p>
         </div>
 
-        <!-- Toolchain High-Level Badge Arrays -->
+        <!-- Toolchain High-Level badge Arrays -->
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-707 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             📍 Pune / Miraj, India
           </span>
-          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-707 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
             ☁️ AWS Academy Foundations
           </span>
-          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-300">
+          <span class="text-xs code-mono px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-707 dark:border-slate-800 dark:bg-slate-900/95 dark:text-slate-300">
             🛠️ Infrastructure as Code
           </span>
         </div>
 
         <!-- Social Action Buttons -->
         <div class="flex flex-wrap gap-3 items-center">
-          <a href="#contact" class="bg-gradient-to-r from-indigo-650 to-indigo-550 hover:from-indigo-600 hover:to-indigo-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-indigo-900/10">
+          <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-indigo-950/10">
             Inquire Setup
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -236,14 +230,14 @@
             </svg>
           </a>
 
-          <a href="https://github.com/shreyash-sutar-04" target="_blank" rel="noreferrer" class="border py-3.5 px-5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80">
-            <svg class="w-4 h-4 text-slate-905 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+          <a href="https://github.com/shreyash-sutar-04" target="_blank" rel="noreferrer" class="border py-3.5 px-5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-white border-slate-200 text-slate-705 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80">
+            <svg class="w-4 h-4 text-slate-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47722 2 2 6.47722 2 12C2 16.42 4.87 20.17 8.85 21.5C9.35 21.58 9.5 21.27 9.5 21V19.25C6.72 19.86 6.13 18.11 6.13 18.11C5.68 16.96 5.03 16.65 5.03 16.65C4.12 16.03 5.1 16.05 5.1 16.05C6.1 16.12 6.63 17.07 6.63 17.07C7.5 18.59 8.97 18.15 9.54 17.89C9.63 17.25 9.89 16.82 10.17 16.57C7.95 16.32 5.62 15.46 5.62 11.63C5.62 10.53 6.01 9.64 6.65 8.95C6.55 8.7 6.2 7.68 6.75 6.3C6.75 6.3 7.59 6.03 9.5 7.32C10.3 7.1 11.15 7 12 7C12.85 7 13.7 7.1 14.5 7.32C16.41 6.03 17.25 6.3 17.25 6.3C17.8 7.68 17.45 8.7 17.35 8.95C17.99 9.64 18.38 10.53 18.38 11.63C18.38 15.47 16.04 16.31 13.81 16.56C14.17 16.87 14.5 17.48 14.5 18.42V21C14.5 21.28 14.65 21.59 15.15 21.5C19.12 20.16 22 16.42 22 12C22 6.47722 17.5228 2 12 2Z" />
             </svg>
             GitHub
           </a>
 
-          <a href="https://linkedin.com/in/shreyash-sutar" target="_blank" rel="noreferrer" class="border py-3.5 px-5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80">
+          <a href="https://www.linkedin.com/in/shreyash-sutar-2333b5259/" target="_blank" rel="noreferrer" class="border py-3.5 px-5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-white border-slate-200 text-slate-705 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80">
             <svg class="w-4 h-4 text-sky-600 dark:text-sky-400" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             </svg>
@@ -278,7 +272,7 @@
                 <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full blur opacity-20 animate-pulse"></div>
                 <div class="relative w-24 h-24 rounded-full flex flex-col items-center justify-center font-extrabold text-3xl border bg-slate-50 border-slate-205 text-slate-950 dark:bg-slate-900/60 dark:border-slate-800 dark:text-white heading-display">
                   SS
-                  <span class="text-[9px] code-mono tracking-wider uppercase font-bold text-indigo-550 dark:text-indigo-400 mt-1 block">
+                  <span class="text-[9px] code-mono tracking-wider uppercase font-bold text-indigo-500 dark:text-indigo-400 mt-1 block">
                     B.Tech
                   </span>
                 </div>
@@ -322,35 +316,35 @@
           <button onclick="switchSkillCategory('cloud')" class="skills-tab-btn active w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="cloud">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">Cloud Platforms</span>
-              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('containers')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="containers">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">Containerisation &amp; Orchestration</span>
-              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('iac')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="iac">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">Infrastructure as Code</span>
-              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('cicd')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="cicd">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">CI/CD &amp; Version Control</span>
-              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
           <button onclick="switchSkillCategory('sys')" class="skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer" data-cat="sys">
             <div class="flex items-center justify-between">
               <span class="font-bold text-xs tracking-tight">OS &amp; Application Servers</span>
-              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <svg class="w-4 h-4 text-indigo-505" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
           </button>
 
@@ -377,124 +371,12 @@
 
             <!-- Detailed Grid Items -->
             <div id="skills-items-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 mt-6 border-t border-slate-200/50 dark:border-slate-800/60">
-              <!-- Dynamically populated by JS below -->
+              <!-- Dynamically populated by JavaScript -->
             </div>
 
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- CI/CD PIPELINE STAGE STEPS -->
-    <section id="pipeline" class="space-y-8">
-      <div class="space-y-2">
-        <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-600 dark:text-indigo-400">
-          Orchestration Architecture
-        </span>
-        <h2 class="text-3xl font-bold tracking-tight heading-display text-slate-900 dark:text-white">
-          CI/CD Pipeline Flow Sequence
-        </h2>
-      </div>
-
-      <div class="rounded-2xl p-6 sm:p-8 border bg-white dark:bg-[#0c1220]/20 border-slate-200 dark:border-slate-900 relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Steppers Left -->
-          <div class="lg:col-span-6 space-y-3">
-            <span class="text-[9px] code-mono tracking-wider font-bold text-slate-400 block uppercase">
-              Select stage to explore automation rules
-            </span>
-
-            <div class="space-y-2">
-              
-              <button onclick="switchPipelineStage(0)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="0">
-                <div class="flex items-center gap-3">
-                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-indigo-600 text-white">
-                    1
-                  </div>
-                  <span class="font-bold text-xs truncate">Code Push &amp; Webhook Trigger</span>
-                </div>
-                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
-                  TRIGGER
-                </span>
-              </button>
-
-              <button onclick="switchPipelineStage(1)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="1">
-                <div class="flex items-center gap-3">
-                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
-                    2
-                  </div>
-                  <span class="font-bold text-xs truncate">Container Compile &amp; Push</span>
-                </div>
-                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
-                  ISOLATION
-                </span>
-              </button>
-
-              <button onclick="switchPipelineStage(2)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="2">
-                <div class="flex items-center gap-3">
-                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
-                    3
-                  </div>
-                  <span class="font-bold text-xs truncate">SonarQube Static Quality Gate</span>
-                </div>
-                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
-                  SECURITY
-                </span>
-              </button>
-
-              <button onclick="switchPipelineStage(3)" class="pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer" data-index="3">
-                <div class="flex items-center gap-3">
-                  <div class="pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
-                    4
-                  </div>
-                  <span class="font-bold text-xs truncate">Blue-Green Deliver / Apache</span>
-                </div>
-                <span class="text-[9px] code-mono font-bold px-2 py-0.5 rounded border uppercase">
-                  DEPLOYS
-                </span>
-              </button>
-
-            </div>
-          </div>
-
-          <!-- Spec Details Right -->
-          <div class="lg:col-span-6">
-            <div id="pipeline-panel" class="p-6 rounded-2xl border bg-gradient-to-b from-indigo-500/5 to-transparent bg-slate-50 dark:bg-slate-900/40 border-slate-150 dark:border-slate-850 h-full flex flex-col justify-between gap-6 transition-all duration-300">
-              
-              <div class="space-y-4">
-                <div class="flex justify-between items-center pb-2 border-b border-indigo-500/10">
-                  <span class="text-[10px] code-mono font-bold text-indigo-500 dark:text-indigo-400 block uppercase">
-                    Automation Engine
-                  </span>
-                  <span id="pipeline-tool" class="text-xs code-mono font-bold text-slate-655 dark:text-slate-400">
-                    Jenkins / Git Hooks
-                  </span>
-                </div>
-
-                <h4 id="pipeline-title" class="text-base font-bold tracking-tight text-slate-900 dark:text-white font-display">
-                  1. Code Push &amp; Webhook Trigger
-                </h4>
-
-                <p id="pipeline-purpose" class="text-xs sm:text-xs leading-relaxed text-slate-650 dark:text-slate-300 font-light">
-                  Developer commits script/code updates to the repository, instantly prompting Jenkins scripted pipeline workflows through automated webhooks.
-                </p>
-
-                <p id="pipeline-detail" class="text-xs sm:text-xs leading-relaxed italic text-slate-405 dark:text-slate-400">
-                  Ensures all integration stages kick off cleanly with zero manual operator delay.
-                </p>
-              </div>
-
-              <div class="pt-3 border-t border-slate-200/40 dark:border-slate-800/60 flex items-center justify-between text-[11px] code-mono text-slate-450 font-bold">
-                <span>ORCHESTRATOR STATUS:</span>
-                <span class="text-indigo-550 dark:text-indigo-400 font-extrabold uppercase">100% Declarative</span>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -518,7 +400,7 @@
             <span class="text-[9px] code-mono text-indigo-600 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full uppercase leading-none font-bold dark:text-indigo-400">
               Automation Core
             </span>
-            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white headings-display">
+            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white">
               CI/CD Pipeline for Application Deployment
             </h4>
             <div class="flex flex-wrap gap-1 mt-3.5">
@@ -532,7 +414,7 @@
             <span class="text-[9px] code-mono text-indigo-600 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full uppercase leading-none font-bold dark:text-indigo-400">
               AWS Infrastructure
             </span>
-            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white components-display">
+            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white">
               Highly Available Web Application on AWS
             </h4>
             <div class="flex flex-wrap gap-1 mt-3.5">
@@ -546,7 +428,7 @@
             <span class="text-[9px] code-mono text-indigo-600 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full uppercase leading-none font-bold dark:text-indigo-400">
               Configuration Control
             </span>
-            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white text-display">
+            <h4 class="font-bold text-sm tracking-tight mt-2.5 block leading-snug text-slate-950 dark:text-white">
               Infrastructure Automation with Terraform &amp; Ansible
             </h4>
             <div class="flex flex-wrap gap-1 mt-3.5">
@@ -560,11 +442,11 @@
 
         <!-- Project Details Viewer (Right Panel) -->
         <div class="lg:col-span-7">
-          <div id="project-detail-panel" class="rounded-3xl p-6 lg:p-8 border bg-gradient-to-b from-indigo-500/5 to-transparent bg-white dark:bg-[#0c1220]/40 border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full space-y-6 transition-all duration-350">
+          <div id="project-detail-panel" class="rounded-3xl p-6 lg:p-8 border bg-gradient-to-b from-indigo-500/5 to-transparent bg-white dark:bg-[#0c1220]/40 border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full space-y-6 transition-all duration-300">
             
             <div class="space-y-6">
               <div class="flex justify-between items-center border-b border-slate-200/20 pb-3">
-                <span id="proj-card-num-badge" class="text-[9px] code-mono font-bold px-3 py-1 rounded-full border bg-indigo-500/10 text-indigo-600 border-indigo-500/20 dark:text-indigo-400">
+                <span id="proj-card-num-badge" class="text-[9px] code-mono font-bold px-3 py-1 rounded-full border bg-indigo-500/10 text-indigo-650 border-indigo-550/20 dark:text-indigo-400">
                   Project Detail Scope
                 </span>
                 
@@ -581,7 +463,7 @@
 
               <div class="space-y-4">
                 <div class="space-y-1">
-                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-550 uppercase block font-bold">
+                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-500 uppercase block font-bold">
                     1. Pipeline Design &amp; Webhooks / Jenkins Scripted Groovy
                   </span>
                   <p id="proj-card-desc-0" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
@@ -590,20 +472,20 @@
                 </div>
 
                 <div class="space-y-1">
-                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-550 uppercase block font-bold">
+                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-500 uppercase block font-bold">
                     2. Core Containerization / Docker Image registries
                   </span>
                   <p id="proj-card-desc-1" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                    Containerized multi-tier application using Docker, managed image versioning, and pushed to a secure private registry.
+                    Containerized multi-tier application using Docker, managed image versioning patterns, and pushed images cleanly to a secure private registry.
                   </p>
                 </div>
 
                 <div class="space-y-1">
-                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-550 uppercase block font-bold">
+                  <span class="text-[9.5px] code-mono tracking-wider text-slate-400 dark:text-slate-500 uppercase block font-bold">
                     3. Security Analysis Gates / SonarQube &amp; Tomcat blue-green
                   </span>
                   <p id="proj-card-desc-2" class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                    Integrated SonarQube (SAST) and Nexus, enforced quality gates, and automated deployments to Apache Tomcat using a blue-green strategy.
+                    Integrated SonarQube (SAST) and Nexus to automatically enforce static analysis security gates, and automated deployment parameters to Apache Tomcat servers using active blue-green delivery strategies.
                   </p>
                 </div>
               </div>
@@ -626,84 +508,13 @@
       </div>
     </section>
 
-    <!-- EMPLOYMENT TRACK & SCHOLASTIC MILESTONES -->
-    <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- SCHOLASTIC MILESTONES -->
+    <section id="experience" class="max-w-3xl mx-auto space-y-8">
       
-      <!-- Career Milestones Timeline (Left side) -->
-      <div class="lg:col-span-6 space-y-8">
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-xs code-mono font-bold uppercase text-indigo-600 dark:text-indigo-400">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            EMPLOYMENT TRACK
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight leading-none heading-display text-slate-900 dark:text-white font-display">
-            Practical Work History
-          </h2>
-        </div>
-
-        <div class="space-y-4">
-          
-          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-              <div>
-                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">Cloud &amp; DevOps Intern</h4>
-                <span class="text-xs code-mono text-indigo-500 dark:text-indigo-400 font-bold block mt-0.5">Systems Innovation Hub, Pune</span>
-              </div>
-              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center uppercase bg-slate-100 border-slate-205 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
-                Internship Role
-              </span>
-            </div>
-            
-            <p class="text-xs text-slate-500 dark:text-slate-400 italic mt-2">
-              Collaborating on cloud delivery modules and automated server architectures.
-            </p>
-
-            <div class="mt-4 space-y-2.5">
-              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Participated in configurations group to containerize multi-tier web microservices using Docker Compose environments.</p>
-              </div>
-              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Structured secure AWS storage tiers and VPC subnets, applying strict IAM credential policies across environments.</p>
-              </div>
-              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Created automated Bash and Python (Boto3 API) scripts to trigger health assessments, log cleanups, and dynamic cloud inventories.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="border p-5 rounded-xl block relative overflow-hidden bg-white hover:border-slate-400 dark:bg-[#0c1220]/20 dark:border-slate-900 dark:hover:border-slate-800 transition-all">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-              <div>
-                <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">DevOps &amp; Security Consultant</h4>
-                <span class="text-xs code-mono text-indigo-500 dark:text-indigo-400 font-bold block mt-0.5">Freelance Tech Advisor</span>
-              </div>
-              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center uppercase bg-slate-100 border-slate-202 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
-                Freelance Track
-              </span>
-            </div>
-            
-            <div class="mt-4 space-y-2.5">
-              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Maintained local server configurations using custom Ansible playbooks and declarative Terraform scripts.</p>
-              </div>
-              <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Designed secure Nginx routing parameters matching Let's Encrypt automated SSL protocols.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Academic Milestones Timeline (Right side) -->
-      <div class="lg:col-span-6 space-y-8">
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-xs code-mono font-bold uppercase text-sky-600 dark:text-sky-400">
+      <!-- Academic Milestones Timeline (Centered) -->
+      <div class="space-y-8">
+        <div class="space-y-2 text-center">
+          <div class="inline-flex items-center gap-2 text-xs code-mono font-bold uppercase text-sky-600 dark:text-sky-400">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
             SCHOLASTIC STAGE
           </div>
@@ -719,9 +530,9 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2.5 border-b border-slate-200/50 dark:border-slate-800/60">
               <div>
                 <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">B. Tech in Computer Engineering</h4>
-                <span class="text-xs code-mono text-indigo-550 dark:text-indigo-400 font-bold block mt-0.5">Sanjay Bhokre Group of Institutes, Miraj</span>
+                <span class="text-xs code-mono text-indigo-505 dark:text-indigo-400 font-bold block mt-0.5">Sanjay Bhokre Group of Institutes, Miraj</span>
               </div>
-              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-indigo-500/10 border-indigo-500/20 text-indigo-600 dark:text-indigo-400 font-display">
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-indigo-500/10 border-indigo-500/20 text-indigo-600 dark:text-indigo-400">
                 SGPA: 7.2
               </span>
             </div>
@@ -741,7 +552,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2.5 border-b border-slate-200/50 dark:border-slate-800/60">
               <div>
                 <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">HSC (12th Grade)</h4>
-                <span class="text-xs code-mono text-sky-655 dark:text-sky-400 font-bold block mt-0.5">Modern Junior College, Shivajinagar, Pune</span>
+                <span class="text-xs code-mono text-sky-650 dark:text-sky-400 font-bold block mt-0.5">Modern Junior College, Shivajinagar, Pune</span>
               </div>
               <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-slate-100 border-slate-200 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
                 54% &#183; 2022
@@ -757,9 +568,9 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2.5 border-b border-slate-200/50 dark:border-slate-800/60">
               <div>
                 <h4 class="font-extrabold text-sm tracking-tight text-slate-950 dark:text-white heading-display">SSC (10th Grade)</h4>
-                <span class="text-xs code-mono text-sky-650 dark:text-sky-400 font-bold block mt-0.5">New English School, Bhosari</span>
+                <span class="text-xs code-mono text-sky-655 dark:text-sky-400 font-bold block mt-0.5">New English School, Bhosari</span>
               </div>
-              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-slate-100 border-slate-202 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
+              <span class="text-[9.5px]/none code-mono font-extrabold px-2.5 py-1 rounded-full border self-start sm:self-center bg-slate-100 border-slate-200 text-slate-655 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400">
                 90.40% &#183; 2020
               </span>
             </div>
@@ -790,7 +601,7 @@
               <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
               <span class="text-[9px] code-mono text-slate-450 dark:text-slate-400 uppercase tracking-widest font-bold">AWS platforms</span>
             </div>
-            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display font-display">
+            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display">
               AWS Certified Cloud Practitioner
             </h4>
             <p class="text-[11px] text-slate-500 dark:text-slate-400">Udemy Academics / Foundations Coursework</p>
@@ -828,7 +639,7 @@
           <div class="space-y-2">
             <div class="flex items-center gap-1.5">
               <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-              <span class="text-[9px] code-mono text-slate-455 dark:text-slate-405 uppercase tracking-widest font-bold">Continuous Del</span>
+              <span class="text-[9px] code-mono text-slate-455 dark:text-slate-400 uppercase tracking-widest font-bold">Continuous Del</span>
             </div>
             <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display">
               Jenkins CI/CD &amp; Docker for DevOps
@@ -850,7 +661,7 @@
               <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
               <span class="text-[9px] code-mono text-slate-455 dark:text-slate-400 uppercase tracking-widest font-bold">Corporate Track</span>
             </div>
-            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display font-display">
+            <h4 class="font-extrabold text-xs sm:text-sm tracking-tight leading-snug text-slate-950 dark:text-white heading-display">
               TCS iON Career Edge — Young Professional
             </h4>
             <p class="text-[11px] text-slate-500 dark:text-slate-400">Communication &amp; Professional Standards</p>
@@ -858,141 +669,58 @@
           <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-800/60 text-[10px] code-mono font-bold">
             <span class="text-slate-455">ID STATE:</span>
             <span class="px-2.5 py-0.5 rounded-full border bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-extrabold uppercase text-[9px]">
-              Completed
+               Completed
             </span>
           </div>
         </div>
 
       </div>
-    </section>
-
-    <!-- WRITTEN WITNESS TESTIMONIALS -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch font-display">
-      
-      <div class="border p-6 rounded-2xl bg-white dark:bg-[#0c1220]/20 dark:border-slate-900 relative overflow-hidden flex flex-col justify-between gap-6 hover:border-indigo-550/30 transition-all">
-        <svg class="absolute -right-4 -bottom-4 w-28 h-28 opacity-[0.03] text-slate-400 dark:opacity-[0.05]" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="text-xs sm:text-sm leading-relaxed text-slate-650 dark:text-slate-355 italic relative z-10 font-normal">
-          "Shreyash has a strong, driven approach to automating development workflows and removing build bottlenecks. His understanding of Container compilation and declarative IaC structures is exceptional."
-        </p>
-        <div class="flex items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800/60 relative z-10">
-          <div class="w-10 h-10 rounded-full font-bold text-xs bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 flex items-center justify-center">KK</div>
-          <div>
-            <h4 class="font-extrabold text-xs text-slate-950 dark:text-white heading-display">Prof. K. R. Kulkarni</h4>
-            <span class="text-[10px] code-mono text-slate-455 animate-pulse">Faculty Mentor, Sanjay Bhokre Group of Institutes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="border p-6 rounded-2xl bg-white dark:bg-[#0c1220]/20 dark:border-slate-900 relative overflow-hidden flex flex-col justify-between gap-6 hover:border-indigo-550/30 transition-all">
-        <svg class="absolute -right-4 -bottom-4 w-28 h-28 opacity-[0.03] text-slate-400 dark:opacity-[0.05]" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="text-xs sm:text-sm leading-relaxed text-slate-650 dark:text-slate-355 italic relative z-10 font-normal">
-          "His passion for public cloud configuration systems, automated server configurations, and load-balancing parameters is commendable. He makes sure security boundaries are tight and configurations are modular."
-        </p>
-        <div class="flex items-center gap-3 pt-4 border-t border-slate-205/50 dark:border-slate-800/60 relative z-10">
-          <div class="w-10 h-10 rounded-full font-bold text-xs bg-sky-500/10 text-sky-500 border border-sky-500/20 flex items-center justify-center">MD</div>
-          <div>
-            <h4 class="font-extrabold text-xs text-slate-950 dark:text-white heading-display animate-pulse">Milind Deshpande</h4>
-            <span class="text-[10px] code-mono text-slate-455">Lead Project Advisor, Systems Innovation Hub</span>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- DIRECT ENGAGEMENT CONTACT SYSTEM -->
-    <section id="contact" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+    <section id="contact" class="max-w-2xl mx-auto space-y-8">
       
-      <!-- Interactive Input Fields & Setup (Left side) -->
-      <div class="lg:col-span-7 border p-6 sm:p-8 rounded-[1.5rem] bg-white dark:bg-[#0c1220]/30 dark:border-slate-900 shadow-xl relative overflow-hidden flex flex-col justify-between">
-        
-        <div class="space-y-6">
-          <div class="space-y-2">
-            <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-500 dark:text-indigo-400 font-display">
-              Interactive Terminal Routing
-            </span>
-            <h3 class="text-2xl font-bold tracking-tight text-slate-950 dark:text-white heading-display leading-none">
-              Inquire Collaboration
-            </h3>
-            <p class="text-xs text-slate-500">
-              Complete the parameters below to generate a pre-structured mail template natively.
-            </p>
-          </div>
-
-          <!-- Form elements direct -->
-          <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="space-y-1.5">
-                <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Your Name</label>
-                <input type="text" id="form-name" required placeholder="eg. Jane Doe" class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors" />
-              </div>
-              <div class="space-y-1.5">
-                <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Company Affiliation</label>
-                <input type="text" id="form-company" placeholder="eg. Cloud Systems Inc" class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors" />
-              </div>
-            </div>
-
-            <div class="space-y-1.5">
-              <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Inquiry Subject</label>
-              <input type="text" id="form-subject" required placeholder="eg. DevOps &amp; Infrastructure Engineering Internship" class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors" />
-            </div>
-
-            <div class="space-y-1.5">
-              <label class="text-[10px] code-mono uppercase font-bold text-slate-400">Message Context Details</label>
-              <textarea id="form-message" required rows="4" placeholder="Briefly describe the internship program requirements, technology focus, timelines, and compensation/location structure..." class="w-full px-4 py-3 rounded-xl text-xs border bg-slate-50/50 border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-slate-955 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-3.5 bg-indigo-650 hover:bg-indigo-600 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md shadow-indigo-950/10">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-              Dispatch Mail Blueprint
-            </button>
-          </form>
-
-          <!-- Success Alert Message -->
-          <div id="form-success-alert" class="hidden p-4 rounded-xl border bg-emerald-500/15 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold leading-relaxed animate-fade-in">
-            Success! Formulated the engagement template. Triggering default local mail redirection client parameters cleanly.
-          </div>
-
-        </div>
-
+      <div class="space-y-2 text-center">
+        <span class="text-xs code-mono font-bold tracking-widest uppercase block text-indigo-505 dark:text-indigo-400">
+          Touchpoint Routing System
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white heading-display leading-none">
+          Contact Channels
+        </h3>
+        <p class="text-xs text-slate-500">
+          Get in touch via official personal channels. Direct and fast-track communications.
+        </p>
       </div>
 
-      <!-- Quick Copy Touchpoint Information (Right side) -->
-      <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+      <div class="space-y-6">
         
-        <div class="border p-6 rounded-2xl bg-slate-100/30 border-slate-200 dark:bg-slate-900/10 dark:border-slate-900 space-y-4">
-          <h4 class="text-xs code-mono font-bold text-slate-400 uppercase tracking-widest leading-none">
-            Direct Contacts
-          </h4>
-
-          <div class="space-y-3 font-display">
+        <div class="border p-6 rounded-2xl bg-white border-slate-200 dark:bg-slate-900/10 dark:border-slate-900 space-y-4 shadow-sm">
+          <div class="space-y-3">
             
-            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-white dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
+            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-slate-50/50 dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
               <div class="flex flex-col gap-1">
                 <span class="text-[8px] text-slate-405 font-bold uppercase code-mono">Personal Email</span>
                 <span class="text-slate-950 dark:text-slate-200 font-bold text-[11px] code-mono">shreyashsutar40@gmail.com</span>
               </div>
-              <button onclick="handleClipboardCopy('shreyashsutar40@gmail.com', 'email')" id="copy-email-btn" class="text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-bold px-2.5 py-1 rounded-xl cursor-pointer transition-all">
+              <button onclick="handleClipboardCopy('shreyashsutar40@gmail.com', 'email')" id="copy-email-btn" class="text-[9.5px] code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-bold px-2.5 py-1 rounded-xl cursor-pointer transition-all">
                 Copy
               </button>
             </div>
 
-            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-white dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
+            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-slate-50/50 dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
               <div class="flex flex-col gap-1">
                 <span class="text-[8px] text-slate-405 font-bold uppercase code-mono">Direct Mobile</span>
                 <span class="text-slate-950 dark:text-slate-200 font-bold text-[11px] code-mono">+91 84858 98732</span>
               </div>
-              <button onclick="handleClipboardCopy('+91 84858 98732', 'phone')" id="copy-phone-btn" class="text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-bold px-2.5 py-1 rounded-xl cursor-pointer transition-all">
+              <button onclick="handleClipboardCopy('+91 84858 98732', 'phone')" id="copy-phone-btn" class="text-[9.5px] code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-bold px-2.5 py-1 rounded-xl cursor-pointer transition-all">
                 Copy
               </button>
             </div>
 
-            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-white dark:bg-[#070a11] border-slate-200 dark:border-slate-850 animate-pulse">
+            <div class="flex items-center justify-between p-3.5 rounded-xl border bg-slate-50/50 dark:bg-[#070a11] border-slate-200 dark:border-slate-850">
               <div class="flex flex-col gap-1">
                 <span class="text-[8px] text-slate-405 font-bold uppercase code-mono">Zone Parameters</span>
-                <span class="text-slate-955 dark:text-slate-200 font-bold text-[11px]">Pune / Miraj, MH, India</span>
+                <span class="text-slate-950 dark:text-slate-200 font-bold text-[11px]">Pune / Miraj, MH, India</span>
               </div>
             </div>
 
@@ -1000,10 +728,10 @@
         </div>
 
         <!-- Metric Response Foot Info -->
-        <div class="border p-6 rounded-2xl bg-slate-955 border-slate-850 text-white space-y-3.5 shadow-sm">
+        <div class="border p-6 rounded-2xl bg-slate-950 border-slate-850 text-white space-y-3.5">
           <div class="flex items-center gap-1.5">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="text-[10px] code-mono font-bold tracking-widest text-[#94a3b8] uppercase">
+            <span class="text-[10px] code-mono font-bold tracking-widest text-slate-450 uppercase">
               RECRUITMENT SUMMARY STATE
             </span>
           </div>
@@ -1022,14 +750,14 @@
   <footer class="border-t bg-white border-slate-200/60 dark:bg-[#090d16] dark:border-slate-900/50 transition-colors duration-500 py-12">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
       
-      <div class="space-y-1.5 font-display">
+      <div class="space-y-1.5">
         <span class="font-extrabold text-sm tracking-tight block heading-display text-slate-900 dark:text-white">Shreyash Sutar</span>
-        <p class="text-[10px] code-mono text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase">
+        <p class="text-[10px] code-mono text-slate-500 dark:text-slate-400 font-bold tracking-wider">
           &#169; 2026 DevOps &amp; Cloud Practitioner Portfolio
         </p>
       </div>
 
-      <div class="flex items-center gap-4 text-[10px] code-mono font-bold text-slate-500 dark:text-slate-455 tracking-wider uppercase">
+      <div class="flex items-center gap-4 text-[10px] code-mono font-bold text-slate-505 dark:text-slate-455 tracking-wider uppercase">
         <span>AWS Cloud Practitioner</span>
         <span>&#183;</span>
         <span>100% Declarative Parity</span>
@@ -1071,7 +799,7 @@
           { name: "Kubernetes Services" },
           { name: "ConfigMaps configurations" }
         ],
-        badgeStyle: "text-sky-655 bg-sky-500/10 border-sky-550/20 dark:text-sky-455 dark:border-sky-500/30"
+        badgeStyle: "text-sky-650 bg-sky-500/10 border-sky-550/20 dark:text-sky-450 dark:border-sky-500/30"
       },
       iac: {
         title: "Infrastructure as Code",
@@ -1117,34 +845,6 @@
       }
     };
 
-    // --- PIPELINE COMPONENT STATE CONFIGURATION ---
-    const pipelineStages = [
-      {
-        title: "1. Code Push & Webhook Trigger",
-        tool: "Jenkins / Git Hooks",
-        purpose: "Developer commits script/code updates to the repository, instantly prompting Jenkins scripted pipeline workflows through automated webhooks.",
-        detail: "Ensures all integration stages kick off cleanly with zero manual operator delay."
-      },
-      {
-        title: "2. Container Compile & Push",
-        tool: "Docker Runtime / Registry",
-        purpose: "Multi-tier applications compile automatically into highly isolated, clean Docker images tagged with explicit package version layers.",
-        detail: "Pushed reliably into private asset registries, locking release consistency."
-      },
-      {
-        title: "3. SonarQube Static Quality Gate",
-        tool: "SonarQube SAST & Nexus",
-        purpose: "Scans compiled structures for code smells, credential warnings, and logic bugs, enforcing rigorous assessment quality barriers before publishing.",
-        detail: "Prevents leaking security credentials or introducing server-side regressions."
-      },
-      {
-        title: "4. Blue-Green Deliver / Apache Tomcat",
-        tool: "Tomcat Server Automation",
-        purpose: "Deploys verified, quality-tested bundles dynamically onto application hosts using secure Tomcat blue-green rollout schemes.",
-        detail: "Provides zero-downtime hot-swaps to end-users on traffic shift boundaries."
-      }
-    ];
-
     // --- PROJECTS SELECTED SPECS DATA ---
     const projectSpecifications = {
       "cicd-pipeline": {
@@ -1188,13 +888,13 @@
 
       // Reset Selector Button Styles
       document.querySelectorAll('#skills-tab-headers button').forEach(btn => {
-        btn.className = "skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 text-slate-800 hover:bg-slate-50 dark:bg-slate-950/40 dark:border-slate-855 dark:text-slate-300 dark:hover:bg-slate-900/30";
+        btn.className = "skills-tab-btn w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 text-slate-800 hover:bg-slate-50 dark:bg-slate-950/40 dark:border-slate-850 dark:text-slate-300 dark:hover:bg-slate-900/30";
       });
 
       // Highlight Selected Button
       const activeBtn = document.querySelector(`[data-cat="${catId}"]`);
       if (activeBtn) {
-        activeBtn.className = "skills-tab-btn active w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer bg-slate-100/80 border-indigo-500 text-slate-955 dark:bg-[#0c1220]/60 dark:border-indigo-500 dark:text-white";
+        activeBtn.className = "skills-tab-btn active w-full text-left p-4 rounded-xl border transition-all relative overflow-hidden cursor-pointer bg-slate-100/80 border-indigo-500 text-slate-950 dark:bg-[#0c1220]/60 dark:border-indigo-500 dark:text-white";
       }
 
       // Populate Data Into Panel Cards with delicate transitions
@@ -1222,37 +922,6 @@
       });
     }
 
-    // Step Pipeline Flow Stepper Selector
-    function switchPipelineStage(idx) {
-      const stage = pipelineStages[idx];
-      if (!stage) return;
-
-      // Clear Active Elements on Left Column buttons
-      document.querySelectorAll('.pipeline-btn').forEach((btn, currentIdx) => {
-        const numBadge = btn.querySelector('.pipeline-num-badge');
-        if (currentIdx === idx) {
-          // Highlight
-          btn.className = "pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer bg-slate-100 border-indigo-400 dark:bg-indigo-955/20 dark:border-indigo-500/40 text-slate-950 dark:text-white";
-          if (numBadge) numBadge.className = "pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-indigo-650 text-white";
-        } else {
-          // Reset
-          btn.className = "pipeline-btn w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between gap-4 cursor-pointer bg-white border-slate-205 dark:bg-[#070a11]/30 dark:border-slate-900 text-slate-505 hover:bg-slate-50";
-          if (numBadge) numBadge.className = "pipeline-num-badge w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-slate-105 text-slate-500 dark:bg-slate-900 dark:text-slate-405";
-        }
-      });
-
-      // Update right details with quick transition
-      const toolField = document.getElementById('pipeline-tool');
-      const titleField = document.getElementById('pipeline-title');
-      const purposeField = document.getElementById('pipeline-purpose');
-      const detailField = document.getElementById('pipeline-detail');
-
-      toolField.textContent = stage.tool;
-      titleField.textContent = stage.title;
-      purposeField.textContent = stage.purpose;
-      detailField.textContent = stage.detail;
-    }
-
     // Advanced Projects Switch Logic
     function switchActiveProject(projId) {
       const spec = projectSpecifications[projId];
@@ -1262,9 +931,9 @@
       document.querySelectorAll('.project-tab-btn').forEach(btn => {
         const currentId = btn.getAttribute('data-pid');
         if (currentId === projId) {
-          btn.className = "project-tab-btn active w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-slate-105/80 border-indigo-500 dark:bg-indigo-950/20 dark:border-indigo-554/30 text-slate-950 dark:text-white shadow-sm";
+          btn.className = "project-tab-btn active w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-slate-100/80 border-indigo-500 dark:bg-indigo-950/20 dark:border-indigo-555/30 text-slate-950 dark:text-white shadow-sm";
         } else {
-          btn.className = "project-tab-btn w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 hover:bg-slate-55 dark:bg-[#070a11]/40 dark:border-slate-900 dark:hover:bg-slate-900/30 text-slate-505 dark:text-slate-300";
+          btn.className = "project-tab-btn w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden cursor-pointer bg-white border-slate-205 hover:bg-slate-50 dark:bg-[#070a11]/40 dark:border-slate-900 dark:hover:bg-slate-900/30 text-slate-500 dark:text-slate-305";
         }
       });
 
@@ -1318,50 +987,10 @@
           btn.className = "text-[9.5px]/none code-mono bg-emerald-600 text-white font-bold px-2.5 py-1 rounded-xl cursor-default transition-all";
           setTimeout(() => {
             btn.textContent = original;
-            btn.className = "text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-655 text-white font-semibold px-2.5 py-1 rounded-xl cursor-pointer transition-all";
+            btn.className = "text-[9.5px]/none code-mono bg-indigo-700 hover:bg-indigo-650 text-white font-semibold px-2.5 py-1 rounded-xl cursor-pointer transition-all";
           }, 2000);
         }
       });
-    }
-
-    // Form Redirection System (Mailto client dispatch)
-    // Handle Inquiry Submit Form Handler
-    function handleInquirySubmit(event) {
-      event.preventDefault();
-      
-      const name = document.getElementById('form-name').value.trim();
-      const company = document.getElementById('form-company').value.trim();
-      const subject = document.getElementById('form-subject').value.trim();
-      const message = document.getElementById('form-message').value.trim();
-
-      if (!subject || !message) return;
-
-      const headerSubject = subject ? subject : `Inquiry — Shreyash Sutar Portfolio`;
-      const structuredBody = `Hi Shreyash,
-
-${message}
-
-Best Regards,
-${name ? name : "Visitor"} ${company ? `(${company})` : ""}
-`;
-
-      const mailtoUrl = `mailto:shreyashsutar40@gmail.com?subject=${encodeURIComponent(headerSubject)}&body=${encodeURIComponent(structuredBody)}`;
-      
-      // Update warning status alert
-      const successAlert = document.getElementById('form-success-alert');
-      successAlert.classList.remove('hidden');
-
-      setTimeout(() => {
-        window.location.href = mailtoUrl;
-      }, 800);
-
-      setTimeout(() => {
-        successAlert.classList.add('hidden');
-        document.getElementById('form-name').value = "";
-        document.getElementById('form-company').value = "";
-        document.getElementById('form-subject').value = "";
-        document.getElementById('form-message').value = "";
-      }, 4500);
     }
 
     // --- INSTANT HIGH-FIDELITY OFFLINE CV WRITER (Markdown file generation) ---
@@ -1369,7 +998,7 @@ ${name ? name : "Visitor"} ${company ? `(${company})` : ""}
       const markdownCV = `# RESUME — SHREYASH SUTAR
 DevOps Engineer | Cloud Engineer
 Contact Focus: +91 84858 98732 | E-Mail: shreyashsutar40@gmail.com
-Location: Pune, India | LinkedIn: linkedin.com/in/shreyash-sutar | GitHub: github.com/shreyash-sutar-04
+Location: Pune, India | LinkedIn: linkedin.com/in/shreyash-sutar-2333b5259 | GitHub: github.com/shreyash-sutar-04
 
 ---
 
